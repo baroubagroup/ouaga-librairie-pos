@@ -476,7 +476,8 @@ function setupPosListeners() {
     processSaleCheckout(true);
   });
 
-  document.getElementById('btnToggleDelestageMode').addEventListener('click', toggleDelestageMode);
+  const btnDelestage = document.getElementById('btnToggleDelestageMode');
+  if (btnDelestage) btnDelestage.addEventListener('click', toggleDelestageMode);
 }
 
 // Autocomplete customer input in POS cart
@@ -588,9 +589,11 @@ function renderPosCatalog() {
     card.dataset.itemId = item.id;
 
     const isLow = !item.isService && item.stock <= (item.minAlertStock || 5);
-    const stockDisplay = item.isService ? 'Prestation comptoir' : `Stock : ${item.stock}`;
     const iconSvg = SVG_ICONS[item.iconType] || (item.isService ? SVG_ICONS.printer : SVG_ICONS.file);
-    const typeLabel = item.isService ? 'Service' : 'Papeterie';
+
+    const footerHtml = item.isService
+      ? `<span class="card-type-tag">Prestation</span><span class="card-stock-pill card-service-badge">Service</span>`
+      : `<span class="card-type-tag">Papeterie</span><span class="card-stock-pill ${isLow ? 'stock-critical' : ''}">Stock: ${item.stock}</span>`;
 
     card.innerHTML = `
       <div class="card-header-row">
@@ -605,8 +608,7 @@ function renderPosCatalog() {
         <h3 class="card-item-title" title="${item.name}">${item.name}</h3>
       </div>
       <div class="card-footer-row">
-        <span class="card-type-tag">${typeLabel}</span>
-        <span class="card-stock-pill ${isLow ? 'stock-critical' : ''}">${stockDisplay}</span>
+        ${footerHtml}
       </div>
     `;
 
