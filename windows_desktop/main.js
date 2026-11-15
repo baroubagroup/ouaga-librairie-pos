@@ -1,37 +1,47 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const path = require('path');
-const http = require('http');
+const net = require('net');
+
+process.on('uncaughtException', (err) => {
+  if (err && err.code === 'EADDRINUSE') {
+    console.log('[Desktop] Port 3500 déjà utilisé par une instance active.');
+  } else {
+    console.error('[Desktop Uncaught Exception]', err);
+  }
+});
 
 let mainWindow = null;
 const PORT = 3500;
 const SERVER_URL = `http://localhost:${PORT}`;
 
-function isServerRunning(callback) {
-  const req = http.get(SERVER_URL, (res) => {
-    callback(true);
-  });
-  req.on('error', () => {
-    callback(false);
-  });
-  req.setTimeout(800, () => {
-    req.abort();
-    callback(false);
-  });
+function checkPortInUse(port, callback) {
+  const tester = net.createServer()
+    .once('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        callback(true);
+      } else {
+        callback(false);
+      }
+    })
+    .once('listening', () => {
+      tester.once('close', () => callback(false)).close();
+    })
+    .listen(port, '0.0.0.0');
 }
 
 function startEmbeddedServer(onReady) {
-  isServerRunning((running) => {
-    if (running) {
-      console.log(`[Desktop] Serveur local déjà actif sur le port ${PORT}.`);
+  checkPortInUse(PORT, (inUse) => {
+    if (inUse) {
+      console.log(`[Desktop] Le port ${PORT} est déjà actif. Connexion directe.`);
       onReady();
     } else {
-      console.log(`[Desktop] Démarrage du serveur embarqué interne...`);
+      console.log(`[Desktop] Démarrage du serveur embarqué interne sur le port ${PORT}...`);
       try {
         require(path.join(__dirname, 'server.js'));
       } catch (err) {
         console.error('[Desktop] Erreur chargement server.js:', err);
       }
-      setTimeout(onReady, 500);
+      setTimeout(onReady, 600);
     }
   });
 }

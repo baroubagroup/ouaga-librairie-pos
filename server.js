@@ -1170,6 +1170,14 @@ async function handleApi(req, res, pathname, parsedUrl) {
   }
 }
 
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.log(`[Ouaga POS] Port ${PORT} déjà occupé par une instance active. Connexion directe.`);
+  } else {
+    console.error('[Ouaga POS Server Error]', err);
+  }
+});
+
 if (!process.env.VERCEL) {
   server.listen(PORT, '0.0.0.0', () => {
     const localIps = getLocalIpAddresses();
