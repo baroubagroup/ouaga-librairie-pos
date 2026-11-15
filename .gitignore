@@ -1,6 +1,15 @@
 node_modules/
+**/node_modules/
 .env
 .env.local
 .DS_Store
 Thumbs.db
 npm-debug.log
+dist/
+**/dist/
+.dart_tool/
+**/.dart_tool/
+build/
+**/build/
+.flutter-plugins
+.flutter-plugins-dependencies

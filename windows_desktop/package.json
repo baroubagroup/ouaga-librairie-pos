@@ -1,0 +1,42 @@
+{
+  "name": "ouaga-librairie-pos-desktop",
+  "version": "1.0.0",
+  "description": "Application Desktop Windows Native - Caisse & Facturation A4 Librairie Papeterie Ouaga (100% Hors-Ligne)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "serve": "node server.js",
+    "build:exe": "electron-builder --win portable"
+  },
+  "keywords": [
+    "pos",
+    "caisse",
+    "facturation",
+    "ouagadougou",
+    "hors-ligne",
+    "burkina-faso"
+  ],
+  "author": "Barouba Group / Ouaga Librairie",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^29.1.5",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.ouaga.librairie.pos",
+    "productName": "Ouaga Librairie POS",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "portable"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "server.js",
+      "public/**/*",
+      "data/**/*"
+    ]
+  }
+}

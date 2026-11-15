@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secrétariat Public & Librairie POS - Ouagadougou</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-layout">
+    <!-- ====================================================================
+         LEFT SIDEBAR (DESKTOP APPLICATION NAVIGATION - NO HORIZONTAL SCROLLBAR)
+         ==================================================================== -->
+    <aside class="sidebar">
+      <!-- Brand Identity -->
+      <div class="sidebar-brand">
+        <div class="brand-emblem" id="sidebarLogoContainer">
+          <svg class="brand-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+            <path d="M6 6h10"/>
+            <path d="M6 10h10"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title" id="sidebarShopName">Le Progrès POS</h1>
+          <span class="brand-tagline" id="sidebarTagline">Secrétariat Public & Librairie</span>
+        </div>
+      </div>
+
+      <!-- Offline Autonomous Chip -->
+      <div class="sidebar-offline-chip">
+        <span class="pulse-dot"></span>
+        <span id="connectionText">100% Hors-Ligne • Local</span>
+      </div>
+
+      <!-- Grouped Sidebar Navigation -->
+      <nav class="sidebar-nav">
+        <!-- Section 01 : Point de Vente -->
+        <div class="nav-section-divider">
+          <span class="nav-section-num">01</span>
+          <span class="nav-section-label">POINT DE VENTE</span>
+        </div>
+        <button class="nav-tab active" data-tab="tab-pos" title="Terminal Caisse Express (F1)">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span>Caisse Express</span>
+          <span class="nav-key-badge">F1</span>
+        </button>
+
+        <button class="nav-tab" data-tab="tab-invoices" title="Factures A4 et Justificatifs (F3)">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Factures A4 Pro</span>
+          <span class="nav-key-badge">F3</span>
+        </button>
+
+        <!-- Section 02 : Relations & Crédits -->
+        <div class="nav-section-divider">
+          <span class="nav-section-num">02</span>
+          <span class="nav-section-label">RELATIONS & CRÉDITS</span>
+        </div>
+        <button class="nav-tab" data-tab="tab-partners" title="Clients réguliers et Fournisseurs">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Clients & Fournisseurs</span>
+          <span class="nav-badge-pill" id="sidebarCreditsCount">Impayés</span>
+        </button>
+
+        <!-- Section 03 : Gestion du Point -->
+        <div class="nav-section-divider">
+          <span class="nav-section-num">03</span>
+          <span class="nav-section-label">GESTION DU POINT</span>
+        </div>
+        <button class="nav-tab" data-tab="tab-stock" title="Inventaire et Approvisionnement des fournitures">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          <span>Stocks & Approvisionnements</span>
+        </button>
+
+        <button class="nav-tab" data-tab="tab-expenses" title="Dépenses et sorties d'argent du tiroir">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Dépenses de Caisse</span>
+        </button>
+
+        <button class="nav-tab" data-tab="tab-close" title="Comptage d'espèces et Clôture journalière">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span>Bilan & Clôture Soir</span>
+        </button>
+
+        <!-- Section 04 : Sécurité & Pilotage -->
+        <div class="nav-section-divider">
+          <span class="nav-section-num">04</span>
+          <span class="nav-section-label">SÉCURITÉ & PILOTAGE</span>
+        </div>
+        <button class="nav-tab" data-tab="tab-dashboard" title="Statistiques et indicateurs financiers">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+          <span>Tableau de Bord</span>
+        </button>
+
+        <button class="nav-tab" data-tab="tab-audit" title="Registre d'audit cryptographique SHA-256">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Audit SHA-256</span>
+          <span class="nav-badge-secure">Scellé</span>
+        </button>
+
+        <button class="nav-tab" data-tab="tab-sync" title="Mode secours sans électricité & synchro mobile">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          <span>Synchro Mobile</span>
+        </button>
+
+        <button class="nav-tab" data-tab="tab-settings" title="Logo, coordonnées et gestion des utilisateurs">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span>Paramètres & Logo</span>
+        </button>
+      </nav>
+
+      <!-- Sidebar Footer: Active Operator Profile -->
+      <div class="sidebar-footer">
+        <div class="operator-card">
+          <div class="operator-avatar" id="operatorAvatar">G</div>
+          <div class="operator-info">
+            <span class="operator-name" id="operatorNameDisplay">M. Ouédraogo</span>
+            <span class="operator-role-badge" id="currentUserRoleBadge">GÉRANT</span>
+          </div>
+          <div class="operator-switch">
+            <select id="userSelectDropdown" class="user-select-hidden" title="Changer d'utilisateur"></select>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         MAIN APPLICATION WRAPPER
+         ==================================================================== -->
+    <div class="app-main-wrapper">
+      <!-- TOP CONTEXT BAR -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <h2 class="view-title" id="currentViewTitle">Caisse Express</h2>
+          <span class="view-breadcrumb" id="currentViewBreadcrumb">Comptoir de vente • Terminal #01</span>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Live Cash Drawer Expected -->
+          <div class="topbar-cash-pill" title="Espèces attendues en caisse physique" id="topbarCashPill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <span>Caisse : <strong id="topbarCashAmount">0 FCFA</strong></span>
+          </div>
+
+          <!-- Digital Ouaga Clock -->
+          <div class="topbar-clock">
+            <span class="clock-live-dot"></span>
+            <span id="currentClock">12:00:00</span>
+          </div>
+
+          <!-- Sound Feedback Toggle -->
+          <button class="btn-sound-toggle" id="btnSoundToggle" title="Activer / Couper les sons de caisse">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            <span>Sons : Actifs</span>
+          </button>
+
+          <!-- Délestage Toggle Button -->
+          <button class="btn-delestage-toggle" id="btnToggleDelestageMode" title="Mode secours hors-ligne en cas de coupure de courant">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span id="delestageBtnLabel">Délestage Sonabel</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- ====================================================================
+           MAIN CONTENT AREA WITH TAB PANES
+           ==================================================================== -->
+      <main class="main-content">
+        <!-- ====================================================================
+             TAB 1 : CAISSE EXPRESS (POS) - PAGE PAR DÉFAUT
+             ==================================================================== -->
+        <section id="tab-pos" class="tab-pane active">
+          <div class="pos-layout">
+            <!-- Left: Catalog & Quick visual cards -->
+            <div class="pos-catalog">
+              <div class="catalog-filters">
+                <div class="search-box">
+                  <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                  <input type="text" id="posSearchInput" placeholder="Rechercher un article ou service (ex: photocopie, bic bleu, rame double a, cahier)...">
+                </div>
+                <div class="category-pills">
+                  <button class="pill active" data-cat="all">Tous les articles</button>
+                  <button class="pill" data-cat="service">Photocopies & Impressions</button>
+                  <button class="pill" data-cat="fourniture">Stylos & Cahiers</button>
+                  <button class="pill" data-cat="rame">Rames & Papier</button>
+                  <button class="pill" data-cat="option">Finitions & Options</button>
+                </div>
+              </div>
+
+              <div class="quick-items-grid" id="posItemsGrid">
+                <!-- Dynamically populated with tactile product cards -->
+              </div>
+            </div>
+
+            <!-- Right: Checkout Terminal -->
+            <div class="pos-checkout">
+              <div class="checkout-card">
+                <div class="checkout-header">
+                  <div>
+                    <h2>Ticket en Cours</h2>
+                    <span class="cashier-label" id="cartCashierLabel">Opérateur : M. Ouédraogo</span>
+                  </div>
+                  <button class="btn-text" id="btnClearCart">Vider le panier</button>
+                </div>
+
+                <!-- Cart items list -->
+                <div class="cart-items" id="cartItemsList">
+                  <div class="empty-cart">
+                    <svg class="empty-cart-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                    <p>Panier vide.<br>Cliquez sur un article à gauche pour l'ajouter.</p>
+                  </div>
+                </div>
+
+                <!-- Cart summary -->
+                <div class="cart-summary">
+                  <div class="summary-line">
+                    <span>Nombre d'articles :</span>
+                    <span id="cartCount" style="font-weight: 700;">0</span>
+                  </div>
+                  <div class="summary-line total-highlight">
+                    <span>NET À PAYER :</span>
+                    <span class="amount" id="cartTotal">0 FCFA</span>
+                  </div>
+                </div>
+
+                <!-- Payment form -->
+                <div class="checkout-form">
+                  <!-- Customer select autocomplete -->
+                  <div class="customer-picker-box">
+                    <div class="customer-picker-header">
+                      <label>Client (Comptoir ou Nominatif) :</label>
+                      <button type="button" class="btn-link" id="btnQuickNewClientModal">+ Nouveau Client</button>
+                    </div>
+                    <div class="autocomplete-wrapper">
+                      <input type="text" id="cartCustomerName" placeholder="Taper le nom ou numéro du client..." autocomplete="off">
+                      <div class="autocomplete-dropdown" id="customerSuggestionsList"></div>
+                    </div>
+                    <div class="customer-linked-details" id="customerLinkedDetails" style="display:none;">
+                      <span id="linkedCustPhone"></span>
+                      <span id="linkedCustDebt" class="text-danger" style="font-weight: 700;"></span>
+                    </div>
+                    <input type="hidden" id="cartCustomerPhone">
+                    <input type="hidden" id="cartCustomerCompany">
+                  </div>
+
+                  <!-- Payment methods -->
+                  <div class="payment-methods">
+                    <label class="pay-method selected">
+                      <input type="radio" name="payMethod" value="cash" checked>
+                      <span>Espèces (Cash)</span>
+                    </label>
+                    <label class="pay-method">
+                      <input type="radio" name="payMethod" value="orange_money">
+                      <span>Orange Money</span>
+                    </label>
+                    <label class="pay-method">
+                      <input type="radio" name="payMethod" value="moov_money">
+                      <span>Moov Money</span>
+                    </label>
+                    <label class="pay-method credit-method">
+                      <input type="radio" name="payMethod" value="credit">
+                      <span>À Crédit (Dette)</span>
+                    </label>
+                  </div>
+
+                  <!-- Cash change calculator -->
+                  <div id="cashCalculator" class="cash-calc-box">
+                    <div class="calc-row">
+                      <label>Montant reçu :</label>
+                      <input type="number" id="tenderedAmount" placeholder="Ex: 2000" min="0" step="25">
+                    </div>
+                    <div class="quick-money-buttons">
+                      <button class="btn-money" data-val="500">500 F</button>
+                      <button class="btn-money" data-val="1000">1 000 F</button>
+                      <button class="btn-money" data-val="2000">2 000 F</button>
+                      <button class="btn-money" data-val="5000">5 000 F</button>
+                      <button class="btn-money" data-val="10000">10 000 F</button>
+                    </div>
+                    <div class="calc-row change-row">
+                      <span>Monnaie à rendre :</span>
+                      <strong id="changeToReturn" class="change-amount">0 FCFA</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Action Buttons: Permanently Pinned at Card Bottom -->
+                <div class="checkout-actions">
+                  <button class="btn-primary-checkout" id="btnValidateSale">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Valider l'Encaissement
+                  </button>
+                  <button class="btn-secondary-checkout" id="btnValidateAndInvoice">
+                    Valider + Émettre Facture A4
+                  </button>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 2 : TABLEAU DE BORD (DASHBOARD ANALYTIQUE)
+             ==================================================================== -->
+        <section id="tab-dashboard" class="tab-pane">
+          <div class="dashboard-container">
+            <div class="kpi-grid">
+              <div class="kpi-card kpi-emerald">
+                <div class="kpi-icon-squircle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div class="kpi-content">
+                  <div class="kpi-title">Ventes Aujourd'hui</div>
+                  <div class="kpi-value" id="kpiTodaySales">0 FCFA</div>
+                  <span class="kpi-sub" id="kpiTodayTransactions">0 transaction(s)</span>
+                </div>
+              </div>
+
+              <div class="kpi-card kpi-blue">
+                <div class="kpi-icon-squircle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div class="kpi-content">
+                  <div class="kpi-title">Ventes de la Semaine</div>
+                  <div class="kpi-value" id="kpiWeekSales">0 FCFA</div>
+                  <span class="kpi-sub">Total 7 derniers jours</span>
+                </div>
+              </div>
+
+              <div class="kpi-card kpi-amber">
+                <div class="kpi-icon-squircle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div class="kpi-content">
+                  <div class="kpi-title">Créances Clients en Cours</div>
+                  <div class="kpi-value" id="kpiPendingCredits">0 FCFA</div>
+                  <span class="kpi-sub" id="kpiPendingCreditsCount">0 débiteur(s)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-columns">
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <div>
+                    <h3>Top 5 des Ventes du Mois (Articles & Services)</h3>
+                    <p class="text-muted" style="font-size: 0.78rem;">Classement par chiffre d'affaires (hors opérations de crédit)</p>
+                  </div>
+                </div>
+                <div id="dashTopProductsList"></div>
+              </div>
+
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <div>
+                    <h3>Encaissements & Trésorerie du Jour</h3>
+                    <p class="text-muted" style="font-size: 0.78rem;">Liquidités réelles perçues au comptoir vs créances en attente</p>
+                  </div>
+                </div>
+                <div id="dashPayBreakdown"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 3 : CLIENTS & FOURNISSEURS (FICHES & CRÉDITS)
+             ==================================================================== -->
+        <section id="tab-partners" class="tab-pane">
+          <div class="partners-container">
+            <div class="subtabs-bar">
+              <button class="sub-tab active" data-subtab="sub-customer-credits">Crédits Clients & Recouvrements</button>
+              <button class="sub-tab" data-subtab="sub-customers-directory">Répertoire des Clients</button>
+              <button class="sub-tab" data-subtab="sub-supplier-debts">Dettes Fournisseurs (Fournisseurs)</button>
+              <button class="sub-tab" data-subtab="sub-suppliers-directory">Fiches Fournisseurs & Achats</button>
+            </div>
+
+            <!-- Subtab 1: Customer Credits -->
+            <div id="sub-customer-credits" class="subtab-pane active">
+              <div class="audit-table-card">
+                <div class="table-toolbar">
+                  <div>
+                    <h3 style="font-size: 1.05rem; font-weight: 800;">Cahier des Ventes à Crédit</h3>
+                    <p class="text-muted" style="font-size: 0.8rem;">Suivi des créances en attente et enregistrement des versements reçus.</p>
+                  </div>
+                  <input type="text" id="searchCreditClientInput" placeholder="Rechercher par client ou téléphone..." class="table-search-input">
+                </div>
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Client</th>
+                      <th>Téléphone</th>
+                      <th>Structure / École</th>
+                      <th style="text-align: right;">Total Crédit</th>
+                      <th style="text-align: right;">Déjà Payé</th>
+                      <th style="text-align: right;">Reste Dû</th>
+                      <th>Statut</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="creditsTableBody" data-alias="clientCreditsTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Subtab 2: Customer Directory -->
+            <div id="sub-customers-directory" class="subtab-pane">
+              <div class="audit-table-card">
+                <div class="table-toolbar">
+                  <div>
+                    <h3 style="font-size: 1.05rem; font-weight: 800;">Répertoire Officiel des Clients</h3>
+                    <p class="text-muted" style="font-size: 0.8rem;">Coordonnées complètes, volume d'achats cumulé et encours client.</p>
+                  </div>
+                  <button class="btn btn-primary btn-sm" id="btnOpenNewCustomerModal">+ Nouveau Client</button>
+                </div>
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Client</th>
+                      <th>Téléphone</th>
+                      <th>Structure / Société</th>
+                      <th>Adresse à Ouaga</th>
+                      <th style="text-align: right;">Achats Cumulés</th>
+                      <th style="text-align: right;">Dette Actuelle</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="customersTableBody" data-alias="customersDirectoryTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Subtab 3: Supplier Debts -->
+            <div id="sub-supplier-debts" class="subtab-pane">
+              <div class="audit-table-card">
+                <div class="table-toolbar">
+                  <div>
+                    <h3 style="font-size: 1.05rem; font-weight: 800;">Dettes en Cours envers les Fournisseurs</h3>
+                    <p class="text-muted" style="font-size: 0.8rem;">Marchandises achetées à crédit au marché Rood-Woko ou chez les distributeurs.</p>
+                  </div>
+                </div>
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Fournisseur</th>
+                      <th>Réf. Facture</th>
+                      <th>Description de la Marchandise</th>
+                      <th style="text-align: right;">Montant Total</th>
+                      <th style="text-align: right;">Acompte Versé</th>
+                      <th style="text-align: right;">Reste à Payer</th>
+                      <th>Statut</th>
+                    </tr>
+                  </thead>
+                  <tbody id="supplierDebtsTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Subtab 4: Suppliers Directory -->
+            <div id="sub-suppliers-directory" class="subtab-pane">
+              <div class="audit-table-card">
+                <div class="table-toolbar">
+                  <div>
+                    <h3 style="font-size: 1.05rem; font-weight: 800;">Fiches des Fournisseurs & Historique des Commandes</h3>
+                    <p class="text-muted" style="font-size: 0.8rem;">Détail de chaque arrivage de marchandise avec quantités et règlements.</p>
+                  </div>
+                  <button class="btn btn-primary btn-sm" id="btnOpenNewSupplierModal">+ Nouveau Fournisseur</button>
+                </div>
+                <div id="suppliersDetailContainer" data-alias="suppliersCardsGrid" style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem;">
+                  <!-- Populated with rich supplier cards and order histories -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 4 : FACTURES A4 PRO (WYSIWYG)
+             ==================================================================== -->
+        <section id="tab-invoices" class="tab-pane">
+          <div class="invoices-layout">
+            <div class="invoices-sidebar">
+              <h3 style="font-size: 1.05rem; font-weight: 800;">Factures Enregistrées</h3>
+              <p class="text-muted" style="font-size: 0.8rem;">Cliquez sur une facture pour l'afficher ou l'imprimer.</p>
+              <div id="invoicesListItems" style="display: flex; flex-direction: column; gap: 0.45rem; max-height: 480px; overflow-y: auto;"></div>
+              <button class="btn btn-primary btn-block" id="btnNewInvoiceDirectModal" data-action="new-invoice" style="margin-top: 0.5rem;">
+                + Nouvelle Facture A4
+              </button>
+            </div>
+
+            <div class="invoice-a4-preview-pane">
+              <!-- SELECTEUR DES 5 MODÈLES DE FACTURE AU CHOIX -->
+              <div class="invoice-template-bar">
+                <div class="template-bar-label">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                  <span>Sélectionnez votre Modèle de Facture A4 (5 Styles Professionnels) :</span>
+                </div>
+                <div class="template-chips-list">
+                  <button type="button" class="template-chip active" data-tpl="tpl-classic" title="Modèle 1 : Classique Officiel / Ministères & ONG">
+                    <span class="chip-num">1</span>
+                    <span class="chip-text">
+                      <strong>Classique Officiel</strong>
+                      <small>Administratif & Ministères</small>
+                    </span>
+                  </button>
+                  <button type="button" class="template-chip" data-tpl="tpl-modern" title="Modèle 2 : Moderne Minimaliste & Épuré">
+                    <span class="chip-num">2</span>
+                    <span class="chip-text">
+                      <strong>Moderne Minimaliste</strong>
+                      <small>Design Suisse & Épuré</small>
+                    </span>
+                  </button>
+                  <button type="button" class="template-chip" data-tpl="tpl-commercial" title="Modèle 3 : Commercial Express / Détaillant Papeterie">
+                    <span class="chip-num">3</span>
+                    <span class="chip-text">
+                      <strong>Commercial Express</strong>
+                      <small>Boutique & Détaillant Pro</small>
+                    </span>
+                  </button>
+                  <button type="button" class="template-chip" data-tpl="tpl-corporate" title="Modèle 4 : Corporate Prestige avec Bandeau Latéral">
+                    <span class="chip-num">4</span>
+                    <span class="chip-text">
+                      <strong>Corporate Prestige</strong>
+                      <small>Bandeau Latéral & Liseré Or</small>
+                    </span>
+                  </button>
+                  <button type="button" class="template-chip" data-tpl="tpl-stamped" title="Modèle 5 : Reçu Certifié avec Tampon & Justificatif">
+                    <span class="chip-num">5</span>
+                    <span class="chip-text">
+                      <strong>Reçu Certifié Tamponné</strong>
+                      <small>Justificatif & Sceau Payé</small>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="a4-sheet tpl-classic" id="a4InvoicePrintSheet">
+                <!-- Watermark for certified receipt -->
+                <div class="a4-watermark-text" aria-hidden="true">ORIGINAL CERTIFIÉ • LE PROGRÈS</div>
+
+                <!-- Certified Official Rubber Stamp (for Model 5) -->
+                <div class="a4-certified-stamp" id="a4CertifiedStamp">
+                  <div class="stamp-box">
+                    <div class="stamp-head">★ FACTURE PAYÉE ★</div>
+                    <div class="stamp-shop" id="stampShopName">LE PROGRÈS OUAGA</div>
+                    <div class="stamp-date" id="stampDateDisplay">DATE DU JOUR</div>
+                    <div class="stamp-status">CERTIFIÉ CONFORME</div>
+                  </div>
+                </div>
+
+                <div class="a4-header-flex">
+                  <div class="a4-brand-col">
+                    <div class="a4-logo-box" id="a4LogoBox">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+                    </div>
+                    <div>
+                      <h1 class="a4-shop-title" id="a4ShopName" contenteditable="true">Secrétariat Public & Librairie Le Progrès</h1>
+                      <p class="a4-tagline" id="a4Tagline" contenteditable="true">Fournitures scolaires - Bureautique - Photocopies & Saisie</p>
+                      <p class="a4-contact" id="a4Address" contenteditable="true">Secteur 28, face au Lycée Bogodogo - Ouagadougou</p>
+                      <p class="a4-contact">Tél : <strong id="a4Phones" contenteditable="true">+226 70 00 11 22 / 76 33 44 55</strong></p>
+                      <div class="a4-fiscal-ids">
+                        <span>N° IFU : <strong id="a4Ifu" contenteditable="true">00123456Z</strong></span>
+                        <span>RCCM : <strong id="a4Rccm" contenteditable="true">BF OUA 2024 A 1234</strong></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="a4-doc-meta">
+                    <div class="a4-badge-type">FACTURE</div>
+                    <div class="a4-meta-row">
+                      <span>N° FACTURE :</span>
+                      <strong id="a4InvoiceNum" contenteditable="true">FAC-2026-0001</strong>
+                    </div>
+                    <div class="a4-meta-row">
+                      <span>Date :</span>
+                      <strong id="a4InvoiceDate" contenteditable="true">13/11/2026</strong>
+                    </div>
+                    <div class="a4-meta-row">
+                      <span>Règlement :</span>
+                      <strong id="a4PaymentMode" contenteditable="true">Espèces</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="a4-customer-box">
+                  <div class="customer-box-header">DOIT / FACTURÉ À :</div>
+                  <div class="customer-box-body">
+                    <p>Client / Destinataire : <strong id="a4CustName" contenteditable="true">Lycée Provincial de Bogodogo</strong></p>
+                    <p>Numéro de Téléphone : <strong id="a4CustPhone" contenteditable="true">+226 78 00 00 00</strong></p>
+                    <p>Structure / Motif : <span id="a4CustCompany" contenteditable="true">Direction des Études - Fournitures de Rentrée</span></p>
+                    <p>Adresse / Localisation : <span id="a4CustAddress" contenteditable="true">Ouagadougou, Secteur 28</span></p>
+                  </div>
+                </div>
+
+                <table class="a4-table" id="a4MainTable">
+                  <thead>
+                    <tr>
+                      <th style="width: 8%">N°</th>
+                      <th style="width: 48%">Désignation des Articles & Prestations</th>
+                      <th style="width: 14%; text-align: center;">Quantité</th>
+                      <th style="width: 15%; text-align: right;">Prix Unitaire</th>
+                      <th style="width: 15%; text-align: right;">Montant Total</th>
+                    </tr>
+                  </thead>
+                  <tbody id="a4TableBody"></tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="3" style="border: none;">
+                        <button type="button" class="btn btn-outline btn-sm" id="btnAddA4RowInline" style="margin-top: 4px;">+ Ajouter une ligne</button>
+                      </td>
+                      <td class="total-label">TOTAL NET :</td>
+                      <td class="total-val" id="a4TotalAmount">0 FCFA</td>
+                    </tr>
+                  </tfoot>
+                </table>
+
+                <div class="a4-words-box">
+                  Arrêté la présente facture à la somme de :  
+                  <strong id="a4AmountWords" contenteditable="true">Zéro Francs CFA</strong>
+                </div>
+
+                <div class="a4-signatures">
+                  <div class="sig-box">
+                    <p>Le Client (Réception)</p>
+                    <span class="sig-space">Nom & Signature</span>
+                  </div>
+                  <div class="sig-box">
+                    <p>Pour la Direction (Cachet & Signature)</p>
+                    <span class="sig-space">Cachet de la boutique</span>
+                  </div>
+                </div>
+
+                <div class="a4-footer" id="a4FooterNotice" contenteditable="true">
+                  Les marchandises vendues ne sont ni reprises ni échangées. Merci de votre confiance !
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                <button class="btn btn-primary btn-lg" id="btnPrintA4Invoice" data-action="print">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+                  Imprimer la Facture A4 (Ctrl + P)
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 5 : STOCKS & APPROVISIONNEMENTS
+             ==================================================================== -->
+        <section id="tab-stock" class="tab-pane">
+          <div class="stock-header-card">
+            <div class="stock-summary-grid">
+              <div class="metric-card">
+                <span class="metric-label">Valeur d'Achat du Stock</span>
+                <span class="metric-value text-primary" id="metricCostValue">0 FCFA</span>
+                <span class="metric-sub">Capital actuellement immobilisé</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Valeur Marchande (Vente)</span>
+                <span class="metric-value text-success" id="metricSaleValue">0 FCFA</span>
+                <span class="metric-sub">Revenus bruts prévisionnels</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Bénéfice Brut Prévisionnel</span>
+                <span class="metric-value text-accent" id="metricProfitValue">0 FCFA</span>
+                <span class="metric-sub">Marge bénéficiaire attendue</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Articles en Alerte Rupture</span>
+                <span class="metric-value text-danger" id="metricLowStockCount">0</span>
+                <span class="metric-sub">Stock sous le seuil d'alerte</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stock-table-card">
+            <div class="table-toolbar">
+              <div>
+                <h3 style="font-size: 1.05rem; font-weight: 800;">Inventaire des Fournitures & Services</h3>
+                <p class="text-muted" style="font-size: 0.8rem;">Gérez les conditionnements carton / boîte et les seuils d'alerte.</p>
+              </div>
+              <div style="display: flex; gap: 0.75rem;">
+                <button class="btn btn-outline" id="btnRestockQuickModal">
+                  Réapprovisionner (+ Fournisseur & Paiement)
+                </button>
+                <button class="btn btn-primary" id="btnAddNewArticleModal">+ Nouvel Article</button>
+              </div>
+            </div>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Article / Prestation</th>
+                  <th>Catégorie</th>
+                  <th>Conditionnement d'Achat</th>
+                  <th style="text-align: right;">Coût d'Achat</th>
+                  <th style="text-align: right;">Prix Vente</th>
+                  <th style="text-align: center;">Stock Rayon</th>
+                  <th style="text-align: right;">Valeur Marchande</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="stockTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 6 : DÉPENSES DE CAISSE
+             ==================================================================== -->
+        <section id="tab-expenses" class="tab-pane">
+          <div class="expenses-layout">
+            <div class="expense-form-card">
+              <h2>Sortie d'argent / Dépense</h2>
+              <p class="text-muted" style="font-size: 0.82rem; margin-bottom: 1.25rem;">Enregistrez toute sortie du tiroir pour que le solde du soir reste exact.</p>
+
+              <form id="formNewExpense">
+                <div class="form-group">
+                  <label>Montant prélevé (FCFA) :</label>
+                  <input type="number" id="expAmount" placeholder="Ex: 2000" min="25" step="25" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Motif de la dépense :</label>
+                  <select id="expCategory" required>
+                    <option value="sonabel">Recharge Électricité / Sonabel</option>
+                    <option value="encre_consommables">Achat Encre / Toner / Agrafes</option>
+                    <option value="credit_appel">Crédit d'appel / Connexion internet</option>
+                    <option value="transport">Frais de déplacement / Marché Rood-Woko</option>
+                    <option value="entretien">Entretien & Nettoyage boutique</option>
+                    <option value="pause">Pause déjeuner / Eau fraîche</option>
+                    <option value="autre">Autre dépense diverse</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Précision / Description :</label>
+                  <input type="text" id="expDescription" placeholder="Ex: Achat toner noir HP LaserJet">
+                </div>
+
+                <div class="form-group">
+                  <label>Bénéficiaire / Demandeur :</label>
+                  <input type="text" id="expBeneficiary" placeholder="Ex: Gérant ou Employé">
+                </div>
+
+                <button type="submit" class="btn btn-danger btn-block" style="margin-top: 0.5rem;">Valider la Sortie d'Argent</button>
+              </form>
+            </div>
+
+            <div class="expenses-history-card">
+              <div class="card-header-flex">
+                <div>
+                  <h3 style="font-size: 1.05rem; font-weight: 800;">Historique des Dépenses</h3>
+                  <div class="category-pills" style="margin-top: 6px;">
+                    <button class="pill active" data-exp-filter="today">Aujourd'hui</button>
+                    <button class="pill" data-exp-filter="week">Cette Semaine</button>
+                    <button class="pill" data-exp-filter="month">Ce Mois-ci</button>
+                    <button class="pill" data-exp-filter="all">Toutes</button>
+                  </div>
+                </div>
+                <span class="badge-total-expenses" id="filteredExpensesSum">Total : 0 FCFA</span>
+              </div>
+
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date & Heure</th>
+                    <th>Catégorie</th>
+                    <th>Description</th>
+                    <th>Bénéficiaire</th>
+                    <th style="text-align: right;">Montant</th>
+                  </tr>
+                </thead>
+                <tbody id="expensesTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 7 : BILAN & CLÔTURE DE CAISSE DU SOIR
+             ==================================================================== -->
+        <section id="tab-close" class="tab-pane">
+          <div class="close-day-container">
+            <div class="close-header">
+              <h2>Pointage & Clôture de Caisse du Soir</h2>
+              <p>Vérifiez les espèces physiques, pointez les soldes Orange Money / Moov Money et scellez la journée.</p>
+            </div>
+
+            <div class="close-grid">
+              <div class="close-card">
+                <h3>Bilan Théorique de la Journée</h3>
+                <div class="close-lines">
+                  <div class="close-line">
+                    <span>Ventes Fournitures Scolaires :</span>
+                    <strong id="closeSalesFournitures">0 FCFA</strong>
+                  </div>
+                  <div class="close-line">
+                    <span>Prestations Services (Photocopies, Saisie) :</span>
+                    <strong id="closeSalesServices">0 FCFA</strong>
+                  </div>
+                  <div class="close-line divider">
+                    <span>TOTAL DES ENCAISSEMENTS :</span>
+                    <strong class="text-success" id="closeTotalSales">0 FCFA</strong>
+                  </div>
+
+                  <div class="close-sub-box">
+                    <div class="close-line">
+                      <span>Espèces (Cash) encaissées :</span>
+                      <strong id="closeCashSales">0 FCFA</strong>
+                    </div>
+                    <div class="close-line">
+                      <span>Reçu sur Orange Money :</span>
+                      <strong id="closeOrangeMoneySales" style="color: var(--orange-money);">0 FCFA</strong>
+                    </div>
+                    <div class="close-line">
+                      <span>Reçu sur Moov Money :</span>
+                      <strong id="closeMoovMoneySales" style="color: var(--moov-money);">0 FCFA</strong>
+                    </div>
+                    <div class="close-line">
+                      <span>Accordé à Crédit :</span>
+                      <strong class="text-muted" id="closeCreditSales">0 FCFA</strong>
+                    </div>
+                  </div>
+
+                  <div class="close-line text-danger">
+                    <span>Dépenses sorties de la caisse :</span>
+                    <strong id="closeTotalExpenses">- 0 FCFA</strong>
+                  </div>
+
+                  <div class="close-line highlight-box">
+                    <span>ESPÈCES ATTENDUES DANS LE TIROIR :</span>
+                    <strong class="text-primary-lg" id="closeExpectedCash">0 FCFA</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="close-card">
+                <h3>Pointage Réel & Détection d'Écarts</h3>
+
+                <div class="form-group">
+                  <label>1. Espèces réelles comptées dans le tiroir (FCFA) :</label>
+                  <div class="input-with-button">
+                    <input type="number" id="actualCashCounted" placeholder="Ex: 25000" min="0" step="25">
+                    <button class="btn btn-outline btn-sm" id="btnCountExact">Tiroir Juste</button>
+                  </div>
+                </div>
+                <div class="difference-result" id="cashDiffResult">
+                  <div class="diff-message">Entrez le comptage espèces pour vérifier les écarts.</div>
+                </div>
+
+                <div class="form-group">
+                  <label>2. Solde Orange Money vérifié (FCFA) :</label>
+                  <div class="input-with-button">
+                    <input type="number" id="actualOrangeCounted" placeholder="Ex: 10000" min="0" step="25">
+                    <button class="btn btn-outline btn-sm" id="btnCountExactOrange">Conforme</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>3. Solde Moov Money vérifié (FCFA) :</label>
+                  <div class="input-with-button">
+                    <input type="number" id="actualMoovCounted" placeholder="Ex: 5000" min="0" step="25">
+                    <button class="btn btn-outline btn-sm" id="btnCountExactMoov">Conforme</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Observations du soir :</label>
+                  <textarea id="closeNotes" rows="2" placeholder="Ex: Caisse parfaitement conforme. Reste 2 rames papier."></textarea>
+                </div>
+
+                <button class="btn btn-success btn-block btn-lg" id="btnFinalizeDailyClose" style="margin-top: 0.5rem;">
+                  Valider et Clôturer la Journée
+                </button>
+              </div>
+            </div>
+
+            <div class="audit-table-card" style="margin-top: 1.5rem;">
+              <div class="table-toolbar">
+                <h3 style="font-size: 1.05rem; font-weight: 800;">Historique des Clôtures Archivées</h3>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Clôturé par</th>
+                    <th>Total Ventes</th>
+                    <th>Espèces Attendues</th>
+                    <th>Espèces Comptées</th>
+                    <th>Écart Caisse</th>
+                    <th>Orange Money</th>
+                    <th>Moov Money</th>
+                    <th>Observations</th>
+                  </tr>
+                </thead>
+                <tbody id="dailyClosesArchiveTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 8 : JOURNAL D'AUDIT IMMUABLE (SHA-256) - REDESIGNED!
+             ==================================================================== -->
+        <section id="tab-audit" class="tab-pane">
+          <div class="audit-container">
+            <div class="audit-shield-banner">
+              <div class="audit-shield-info">
+                <div class="audit-shield-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div class="audit-shield-text">
+                  <h2>Journal d'Audit Immuable & Chaîne Cryptographique</h2>
+                  <p>Chaque vente, réapprovisionnement, dépense et clôture est scellée par un hachage SHA-256 inviolable.</p>
+                </div>
+              </div>
+
+              <div class="audit-shield-actions">
+                <div class="audit-status-badge" id="auditIntegrityStatus">
+                  <span class="pulse-dot"></span>
+                  <span>Chaîne Intègre & Active</span>
+                </div>
+                <button class="btn-verify-chain" id="btnVerifyAuditIntegrity">
+                  Vérifier l'Intégrité
+                </button>
+              </div>
+            </div>
+
+            <div class="audit-table-card">
+              <div class="table-toolbar">
+                <div>
+                  <h3 style="font-size: 1.05rem; font-weight: 800;">Événements Récents & Preuves d'Intégrité</h3>
+                  <p class="text-muted" style="font-size: 0.8rem;">Détails complets en clair et empreintes numériques scellées.</p>
+                </div>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date & Heure</th>
+                    <th>Opération</th>
+                    <th>Opérateur</th>
+                    <th>Détails de l'Événement</th>
+                    <th>Empreinte SHA-256</th>
+                  </tr>
+                </thead>
+                <tbody id="auditLogsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 9 : SYNCHRONISATION MOBILE & DÉLESTAGE - REDESIGNED WITH REAL QR!
+             ==================================================================== -->
+        <section id="tab-sync" class="tab-pane">
+          <div class="sync-container">
+            <div class="sync-hero-card">
+              <h2>Mode Délestage Sonabel & Synchronisation Mobile</h2>
+              <p>
+                En cas de coupure de courant, encaissez sur votre smartphone Android (sur batterie) et rapatriez toutes les ventes sur le PC sans connexion Internet requise.
+              </p>
+            </div>
+
+            <div class="sync-methods-grid">
+              <!-- Method 1: Wi-Fi Hotspot & QR Code -->
+              <div class="sync-method-card">
+                <div>
+                  <span class="method-tag">Méthode 1 : Sans Fil (Wi-Fi / Hotspot)</span>
+                  <h3>Connexion Instantanée par Code QR</h3>
+                  <p class="desc">Scannez ce code QR avec l'appareil photo du smartphone ou l'application Android pour ouvrir la caisse mobile synchronisée.</p>
+
+                  <div class="qr-display-box">
+                    <div id="qrCodeContainer">
+                      <!-- Dynamically generated crisp vector QR Code -->
+                    </div>
+                    <div class="ip-connection-info">
+                      <span class="ip-badge" id="syncIpAddressDisplay">http://192.168.1.100:3500</span>
+                      <p class="ip-hint">Point d'accès du smartphone ou box Wi-Fi de la boutique</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary btn-block" id="btnSimulateMobileSync">
+                  Simuler la Rentrée des Ventes Mobile
+                </button>
+              </div>
+
+              <!-- Method 2: USB Cable Parachute -->
+              <div class="sync-method-card">
+                <div>
+                  <span class="method-tag fallback-tag">Méthode 2 : Câble USB (Parachute de Secours)</span>
+                  <h3>Transfert Sécurisé de Fichier de Ventes</h3>
+                  <p class="desc">Si le Wi-Fi ne répond pas, branchez le téléphone en USB et importez le fichier exporté de secours en un clic.</p>
+
+                  <div class="usb-dropzone" id="usbDropzone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/><path d="M9 6h6"/></svg>
+                    <p>Déposez le fichier de ventes ici</p>
+                    <span>Format supporté : .sec, .json ou sauvegarde de secours</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                  <input type="file" id="usbFileInput" accept=".sec,.json,.dat" style="display:none">
+                  <button class="btn btn-outline btn-block" id="btnTriggerUsbImport">
+                    Parcourir et Importer Fichier USB
+                  </button>
+                  <button class="btn btn-text btn-block" id="btnDownloadCurrentBackup">
+                    Télécharger une sauvegarde complète du PC
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 10 : PARAMÈTRES, LOGO & UTILISATEURS
+             ==================================================================== -->
+        <section id="tab-settings" class="tab-pane">
+          <div class="settings-container">
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <h2>Coordonnées & Logo Officiel</h2>
+                <p>Ces données figurent en en-tête de toutes les Factures A4 éditées pour vos clients.</p>
+              </div>
+
+              <form id="formSettings">
+                <div class="logo-uploader-box">
+                  <div class="logo-preview-frame" id="settingsLogoPreview">
+                    <svg class="svg-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+                  </div>
+                  <div class="logo-uploader-actions">
+                    <input type="file" id="logoFileInput" accept="image/png, image/jpeg, image/svg+xml" style="display:none">
+                    <div style="display: flex; gap: 0.5rem;">
+                      <button type="button" class="btn btn-outline btn-sm" id="btnTriggerLogoUpload">Changer le Logo</button>
+                      <button type="button" class="btn btn-text btn-sm" id="btnRemoveLogo">Supprimer</button>
+                    </div>
+                    <span class="text-muted" style="font-size: 0.75rem;">PNG, JPEG ou SVG (recommandé carré ou rond).</span>
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label>Nom commercial de la boutique :</label>
+                    <input type="text" id="setShopName" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Slogan / Activités :</label>
+                    <input type="text" id="setTagline" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Téléphone principal :</label>
+                    <input type="text" id="setPhone1" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Téléphone 2 (WhatsApp) :</label>
+                    <input type="text" id="setPhone2">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Ville & Quartier / Secteur :</label>
+                    <input type="text" id="setAddress" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Numéro IFU :</label>
+                    <input type="text" id="setIfu" placeholder="Ex: 00123456Z">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Numéro RCCM :</label>
+                    <input type="text" id="setRccm" placeholder="Ex: BF OUA 2024 A 1234">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Préfixe de facturation :</label>
+                    <input type="text" id="setInvoicePrefix" value="FAC-2026-">
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                  <label>Mention légale en bas de facture :</label>
+                  <input type="text" id="setFooterNotice">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">Enregistrer les Coordonnées</button>
+              </form>
+            </div>
+
+            <div class="settings-card">
+              <div class="settings-card-header" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <h2>Comptes Collaborateurs & PIN</h2>
+                  <p>Attribuez un rôle (Gérant ou Vendeur) et un code PIN à chaque collaborateur.</p>
+                </div>
+                <button class="btn btn-outline btn-sm" id="btnOpenNewUserModal">+ Nouvel Utilisateur</button>
+              </div>
+
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Nom</th>
+                    <th>Rôle</th>
+                    <th>Code PIN</th>
+                    <th>Statut</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="usersTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ====================================================================
+         ALL APPLICATION MODALS
+         ==================================================================== -->
+
+    <!-- MODAL: RÉAPPROVISIONNEMENT FOURNISSEUR & CASH/CRÉDIT -->
+    <div class="modal-overlay" id="modalRestock">
+      <div class="modal-card" style="max-width: 620px;">
+        <div class="modal-header">
+          <h3>Réapprovisionnement du Stock</h3>
+          <button class="btn-close-modal modal-close">&times;</button>
+        </div>
+        <form id="formRestock">
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Article à approvisionner :</label>
+                <select id="restockArticleSelect" required></select>
+              </div>
+              <div class="form-group">
+                <label>Fournisseur :</label>
+                <select id="restockSupplierSelect" required></select>
+              </div>
+            </div>
+
+            <!-- New Supplier Inline Fields -->
+            <div id="newSupplierInlineBox" class="info-banner" style="display:none; margin-bottom: 0.5rem;">
+              <strong>Ajout Rapide de Fournisseur :</strong>
+              <div class="form-row" style="margin-top: 0.5rem; margin-bottom: 0;">
+                <div class="form-group">
+                  <label>Nom de l'Établissement :</label>
+                  <input type="text" id="newSupName" placeholder="Ex: Éts Sawadogo & Fils (Rood-Woko)">
+                </div>
+                <div class="form-group">
+                  <label>Numéro Téléphone :</label>
+                  <input type="text" id="newSupPhone" placeholder="Ex: +226 76 00 11 22">
+                </div>
+              </div>
+            </div>
+
+            <div class="restock-item-info" id="restockArticleInfo" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;"></div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nombre de boîtes/cartons :</label>
+                <input type="number" id="restockBulkQty" min="0" value="1">
+              </div>
+              <div class="form-group">
+                <label>Ou unités en vrac :</label>
+                <input type="number" id="restockUnitQty" min="0" value="0">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Coût d'achat total (FCFA) :</label>
+                <input type="number" id="restockTotalCost" placeholder="Ex: 35000" min="0" step="50" required>
+              </div>
+              <div class="form-group">
+                <label>Réf. Facture / Bon Fournisseur :</label>
+                <input type="text" id="restockInvoiceRef" placeholder="Ex: BON-1234">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Mode de règlement envers le fournisseur :</label>
+              <div class="payment-methods">
+                <label class="pay-method selected">
+                  <input type="radio" name="restockPayType" value="cash" checked>
+                  <span>Payé Comptant (Caisse)</span>
+                </label>
+                <label class="pay-method credit-method">
+                  <input type="radio" name="restockPayType" value="credit">
+                  <span>Pris à Crédit (Dette)</span>
+                </label>
+              </div>
+            </div>
+
+            <div id="restockCreditDetailsBox" style="display:none;" class="calc-row">
+              <label>Acompte versé immédiatement (FCFA) :</label>
+              <input type="number" id="restockPaidUpfront" min="0" step="100" value="0">
+            </div>
+
+            <div class="info-banner" id="restockSummaryBanner" style="margin-top: 0.5rem;"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline modal-close">Annuler</button>
+            <button type="submit" class="btn btn-success">Enregistrer l'Approvisionnement</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL: NOUVEAU CLIENT -->
+    <div class="modal-overlay" id="modalCustomer">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Fiche Nouveau Client</h3>
+          <button class="btn-close-modal modal-close">&times;</button>
+        </div>
+        <form id="formCustomer">
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Nom complet ou Établissement :</label>
+              <input type="text" id="newCustName" placeholder="Ex: M. Ouédraogo ou École Wend-Panga" required>
+            </div>
+            <div class="form-group">
+              <label>Numéro de Téléphone (WhatsApp/Appel) :</label>
+              <input type="text" id="newCustPhone" placeholder="Ex: +226 70 00 11 22" required>
+            </div>
+            <div class="form-group">
+              <label>Structure / Société / École :</label>
+              <input type="text" id="newCustCompany" placeholder="Ex: Direction des Études">
+            </div>
+            <div class="form-group">
+              <label>Adresse / Secteur à Ouaga :</label>
+              <input type="text" id="newCustAddress" placeholder="Ex: Secteur 28, Ouagadougou">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline modal-close">Annuler</button>
+            <button type="submit" class="btn btn-primary">Enregistrer le Client</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL: NOUVEAU FOURNISSEUR -->
+    <div class="modal-overlay" id="modalSupplier">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Fiche Nouveau Fournisseur</h3>
+          <button class="btn-close-modal modal-close">&times;</button>
+        </div>
+        <form id="formSupplier">
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Nom de l'Établissement / Fournisseur :</label>
+              <input type="text" id="supNameInput" placeholder="Ex: Éts Diallo & Frères" required>
+            </div>
+            <div class="form-group">
+              <label>Téléphone :</label>
+              <input type="text" id="supPhoneInput" placeholder="Ex: +226 76 11 22 33" required>
+            </div>
+            <div class="form-group">
+              <label>Adresse (Marché / Quartier) :</label>
+              <input type="text" id="supAddressInput" placeholder="Ex: Grand Marché Rood-Woko Hall C">
+            </div>
+            <div class="form-group">
+              <label>Marchandises fournies :</label>
+              <input type="text" id="supArticlesInput" placeholder="Ex: Rames papier, Stylos Bic, Fournitures">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline modal-close">Annuler</button>
+            <button type="submit" class="btn btn-primary">Enregistrer le Fournisseur</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL: ENCAISSEMENT RÈGLEMENT CRÉDIT CLIENT -->
+    <div class="modal-overlay" id="modalPayCredit">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Encaisser un Versement Client</h3>
+          <button class="btn-close-modal modal-close">&times;</button>
+        </div>
+        <form id="formPayCredit">
+          <div class="modal-body">
+            <input type="hidden" id="payCreditId">
+            <div class="info-banner" id="payCreditBanner"></div>
+            <div class="form-group">
+              <label>Montant versé par le client (FCFA) :</label>
+              <input type="number" id="payCreditAmount" min="25" step="25" required>
+            </div>
+            <div class="form-group">
+              <label>Mode de versement :</label>
+              <select id="payCreditMethod">
+                <option value="cash">Espèces (Cash)</option>
+                <option value="orange_money">Orange Money</option>
+                <option value="moov_money">Moov Money</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Note / Commentaire (optionnel) :</label>
+              <input type="text" id="payCreditNote" placeholder="Ex: Acompte sur fourniture rentrée">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline modal-close">Annuler</button>
+            <button type="submit" class="btn btn-success">Valider l'Encaissement</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL: NOUVEL ARTICLE -->
+    <div class="modal-overlay" id="modalArticle">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 id="modalArticleTitle">Nouvel Article / Service</h3>
+          <button class="btn-close-modal modal-close">&times;</button>
+        </div>
+        <form id="formArticle">
+          <div class="modal-body">
+            <input type="hidden" id="artId">
+            <div class="form-group">
+              <label>Désignation de l'article ou du service :</label>
+              <input type="text" id="artName" placeholder="Ex: Stylo Bic Rouge ou Photocopie A3" required>
+            </div>
+            <div class="form-group">
+              <label>Icône / Visuel vectoriel :</label>
+              <select id="artIconType">
+                <option value="pen">Stylo / Instrument d'écriture</option>
+                <option value="book">Cahier / Registre</option>
+                <option value="file">Rame / Papier A4</option>
+                <option value="folder">Chemise / Classeur</option>
+                <option value="copy">Photocopie</option>
+                <option value="printer">Impression</option>
+                <option value="keyboard">Saisie de document</option>
+                <option value="shield">Plastification</option>
+                <option value="layers">Reliure</option>
+                <option value="paperclip">Agrafage / Finition</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Catégorie :</label>
+              <select id="artCategory">
+                <option value="fourniture">Fourniture / Papeterie (Stock physique)</option>
+                <option value="service">Prestation de Service (Photocopie, Saisie...)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Prix de Vente Détail (FCFA) :</label>
+                <input type="number" id="artSalePrice" min="5" step="5" required>
+              </div>
+              <div class="form-group">
+                <label>Unité de vente :</label>
+                <input type="text" id="artUnitSale" placeholder="Ex: stylo, cahier, page">
+              </div>
+            </div>
+
+            <div id="bulkFieldsSection" class="bulk-box">
+              <h4>Conditionnement d'Achat en Gros :</h4>
+              <div class="form-group">
+                <label>Nom du paquet/carton :</label>
+                <input type="text" id="artBulkName" placeholder="Ex: Boîte de 50 stylos ou Carton de 5 rames">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Nombre de pièces par boîte :</label>
+                  <input type="number" id="artBulkQty" min="1" value="1">
+                </div>
+                <div class="form-group">
+                  <label>Prix d'Achat de la Boîte (FCFA) :</label>
+                  <input type="number" id="artBulkPurchaseCost" min="0" step="25" placeholder="Ex: 3500">
+                </div>
+              </div>
+              <div class="calculated-unit-cost">
+                Coût de revient unitaire calculé : <strong id="calculatedUnitCostDisplay">0 FCFA</strong>
+              </div>
+            </div>
+
+            <div class="form-row" style="margin-top: 0.5rem;">
+              <div class="form-group">
+                <label>Stock Initial (en unités) :</label>
+                <input type="number" id="artInitialStock" min="0" value="0">
+              </div>
+              <div class="form-group">
+                <label>Seuil d'Alerte Minimum :</label>
+                <input type="number" id="artMinAlert" min="0" value="5">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline modal-close">Annuler</button>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL: NOUVELLE FACTURE A4 DIRECTE -->
+    <div class="modal-overlay" id="modalNewInvoiceDirect">
+      <div class="modal-card" style="max-width: 620px;">
+        <div class="modal-header">
+          <h3>Créer une Facture A4 Personnalisée</h3>
+          <button class="btn-close-modal modal-close">&times;</button>
+        </div>
+        <form id="formDirectInvoice">
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nom du Client / Contact :</label>
+                <input type="text" id="dirInvCustName" placeholder="Ex: M. Ouédraogo" required>
+              </div>
+              <div class="form-group">
+                <label>Téléphone Client :</label>
+                <input type="text" id="dirInvCustPhone" placeholder="Ex: +226 70 12 34 56" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Structure / Société / École :</label>
+                <input type="text" id="dirInvCustCompany" placeholder="Ex: Complexe Scolaire Wend-Panga">
+              </div>
+              <div class="form-group">
+                <label>Adresse / Secteur du Client :</label>
+                <input type="text" id="dirInvCustAddress" placeholder="Ex: Ouagadougou, Secteur 28">
+              </div>
+            </div>
+
+            <h4 style="font-size: 0.85rem; font-weight: 700; margin-top: 0.5rem;">Lignes de Facturation :</h4>
+            <div id="dirInvLinesContainer" style="display: flex; flex-direction: column; gap: 0.5rem;"></div>
+            <button type="button" class="btn btn-outline btn-sm" id="btnAddDirInvLine">+ Ajouter une ligne</button>
+
+            <div style="background: var(--bg-surface-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-sm); display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+              <span style="font-weight: 700; font-size: 0.85rem;">TOTAL FACTURE :</span>
+              <strong id="dirInvTotalDisplay" style="font-size: 1.2rem; color: var(--text-main);">0 FCFA</strong>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline modal-close">Annuler</button>
+            <button type="submit" class="btn btn-primary">Générer la Facture A4</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL: NOUVEL UTILISATEUR -->
+    <div class="modal-overlay" id="modalNewUser">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Nouvel Utilisateur / Vendeur</h3>
+          <button class="btn-close-modal modal-close">&times;</button>
+        </div>
+        <form id="formNewUser">
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Nom complet :</label>
+              <input type="text" id="newUserName" placeholder="Ex: Souleymane" required>
+            </div>
+            <div class="form-group">
+              <label>Rôle :</label>
+              <select id="newUserRole">
+                <option value="vendeur">Vendeur / Caissier (Accès Caisse)</option>
+                <option value="gerant">Gérant / Propriétaire (Accès complet)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Code PIN secret (4 chiffres) :</label>
+              <input type="password" id="newUserPin" maxlength="4" placeholder="Ex: 1234" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline modal-close">Annuler</button>
+            <button type="submit" class="btn btn-primary">Créer l'Utilisateur</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toastNotification">Notification</div>
+  </div>
+
+  <script src="qrcode.js"></script>
+  <script src="sound.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

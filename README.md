@@ -1,62 +1,81 @@
-# Secrétariat Public & Librairie POS (Édition Pro 2026)
+# Suite Multi-Plateforme - Gestion de Librairie & Papeterie Ouaga (Édition Pro 2026)
 
-Application complète de gestion de caisse, facturation A4, gestion des stocks en gros & détail, créances clients, dettes fournisseurs, journal d'audit immuable SHA-256 et résilience aux délestages (Burkina Faso).
-
----
-
-## 🌟 Fonctionnalités Clés
-
-1. **Caisse Express Tactile (POS)**
-   * Grille d'articles à haute visibilité et touches rapides adaptées au secrétariat public & papeterie : photocopies recto/verso, impressions couleur, saisie, reliure, plastification, stylos Bic, cahiers, rames Double A.
-   * Règlements multi-canaux : Espèces avec calculatrice de rendu de monnaie, Orange Money, Moov Money, et Ventes à Crédit (créances).
-
-2. **5 Modèles de Facture A4 Pro Sélectionnables**
-   * **Modèle 1 : Classique Officiel** (style administratif & ministériel)
-   * **Modèle 2 : Moderne Minimaliste** (design suisse épuré)
-   * **Modèle 3 : Commercial Express** (papeterie & détaillant)
-   * **Modèle 4 : Corporate Prestige** (bandeau latéral & liseré or)
-   * **Modèle 5 : Reçu Certifié Tamponné** (tampon Payé & sceau de sécurité)
-   * Conversion automatique du total arrêté en toutes lettres en français (*ex: « Vingt-cinq mille Francs CFA »*).
-
-3. **Gestion Intelligente des Stocks & Approvisionnements**
-   * Réapprovisionnement avec sélection de fournisseur (ou création directe de nouveau fournisseur).
-   * Prise de marchandise au comptant ou à crédit (tenue automatique du carnet de dettes fournisseurs).
-   * Conversion automatique des cartons/boîtes en unités vendues au comptoir.
-
-4. **Suivi des Créances Clients & Dettes Fournisseurs**
-   * Fiches clients avec historique des achats, impayés et enregistrement des versements d'acomptes.
-   * Fiches fournisseurs détaillées avec dates d'arrivage et soldes dus.
-
-5. **Journal d'Audit Immuable SHA-256**
-   * Chaîne cryptographique inviolable scellant chaque vente, réapprovisionnement, modification de prix et clôture journalière.
-   * Détecteur d'intégrité en temps réel.
-
-6. **Base de Données Hybride (Offline-First + Supabase Cloud)**
-   * Fonctionne à 100% hors-ligne en local avec fichier sécurisé.
-   * Synchronisation automatique sur PostgreSQL Supabase (`BAROUBA GROUP`).
-
-7. **Mode Délestage Sonabel & Synchronisation Mobile**
-   * Encaissement continu sur smartphone Android pendant les pannes de courant.
-   * Rapatriement instantané par Code QR ou câble USB.
+Architecture complète multi-plateforme conçue pour les librairies, papeteries et secrétariats publics de Ouagadougou (Burkina Faso).
+Garantie **100% hors-ligne**, résiliente aux délestages de la Sonabel, synchronisable en réseau local (Wi-Fi) et dans le Cloud.
 
 ---
 
-## 🚀 Démarrage Local
+## 📁 Organisation de l'Espace de Travail
 
-```powershell
-# Accéder au dossier sur le bureau
-cd "C:\Users\DELL\Desktop\application de gestion de librairie papeterie"
-
-# Lancer le serveur
-node server.js
+```text
+application de gestion de librairie papeterie/
+│
+├── 🪟 windows_desktop/       Application Windows Native (100% Hors-Ligne)
+│   ├── Lancer_Caisse_Windows.bat      -> Démarrage immédiat en 1 double-clic (zéro configuration)
+│   ├── Installer_Et_Compiler_EXE.bat  -> Compilation de l'exécutable portable (.exe)
+│   ├── main.js                        -> Moteur Electron natif (Gestion d'impression A4/Ticket, raccourcis F1/F3)
+│   ├── preload.js                     -> Pont IPC sécurisé
+│   ├── package.json                   -> Scripts de build Electron
+│   ├── server.js                      -> Serveur local hors-ligne autonome (Port 3500)
+│   ├── public/                        -> Interface complète (Caisse, 5 Modèles Factures A4, Stocks, etc.)
+│   └── data/                          -> Fichiers de données locaux sécurisés
+│
+├── 📱 android_mobile/        Application Mobile Android Native (Flutter 100% Hors-Ligne)
+│   ├── Generer_APK_Android.bat        -> Compilation du fichier APK Android en 1 clic
+│   ├── lib/
+│   │   ├── main.dart                  -> Point d'entrée, thème Material 3 sombre & navigation
+│   │   ├── models/                    -> Modèles de données (Article, CartItem, Sale)
+│   │   ├── services/                  -> OfflineDatabase (SQLite local) & SyncService (Wi-Fi/PC)
+│   │   └── screens/                   -> CaisseScreen (Tactile), HistoryScreen, SyncScreen
+│   ├── android/                       -> Manifest Android & permissions Wi-Fi/Réseau local
+│   └── pubspec.yaml                   -> Dépendances Flutter (sqflite, http, intl, etc.)
+│
+├── 🌐 web_cloud/             Application Web Cloud (Vercel & Supabase)
+│   ├── server.js                      -> API Node.js prête pour Serverless
+│   ├── vercel.json                    -> Configuration de déploiement Vercel
+│   ├── package.json                   -> Dépendances cloud
+│   └── public/                        -> Frontend web universel
+│
+└── 🗄️ database/              Base de Données & Schémas
+    ├── supabase_schema.sql            -> Schéma relationnel 11 tables avec RLS & Triggers
+    └── local_database.json            -> Données de secours locales
 ```
 
-Ouvrez ensuite :
-👉 **http://localhost:3500**
+---
+
+## 🪟 1. Application Windows Desktop (`windows_desktop/`)
+
+### Démarrage Rapide :
+1. Ouvrez le dossier `windows_desktop`.
+2. Double-cliquez sur **`Lancer_Caisse_Windows.bat`**.
+3. L'application démarre immédiatement en mode bureau plein écran connecté au moteur de caisse local sur le port 3500.
+
+### Génération de l'exécutable `.exe` :
+* Double-cliquez sur **`Installer_Et_Compiler_EXE.bat`**.
+* Un fichier `.exe` portable et autonome sera créé dans le dossier `windows_desktop/dist/`.
 
 ---
 
-## ☁️ Déploiement Vercel & Supabase
+## 📱 2. Application Mobile Android (`android_mobile/`)
 
-* **Base de données Cloud** : PostgreSQL hébergé sur Supabase (`https://ylrnxuphtaoazlhlmnsd.supabase.co`)
-* **Déploiement Cloud** : Prêt pour Vercel via `@vercel/node` et `vercel.json`.
+### Fonctionnalités Mobiles :
+* **Autonomie Totale Anti-Délestage** : Fonctionne 100% hors-ligne grâce à la base de données SQLite locale (`sqflite`). Le vendeur ou la caissière peut continuer les ventes au comptoir même si le PC ou le secteur est coupé.
+* **Modes de règlement** : Espèces avec raccourcis billets (500 F, 1 000 F, 2 000 F, 5 000 F, 10 000 F), Orange Money, Moov Money et Ventes à Crédit.
+* **Synchronisation Wi-Fi / PC** : Dès que l'électricité revient, un simple clic sur le bouton **« Synchroniser »** envoie les ventes enregistrées vers le PC central et met à jour le stock.
+
+### Générer le fichier `.apk` :
+* Double-cliquez sur **`android_mobile/Generer_APK_Android.bat`** (ou lancez `flutter build apk --release`).
+* Le fichier généré se trouvera dans `android_mobile/build/app/outputs/flutter-apk/app-release.apk`.
+
+---
+
+## 🌐 3. Web & Cloud (`web_cloud/` + `database/`)
+
+* **Cloud Database** : Supabase PostgreSQL (`https://ylrnxuphtaoazlhlmnsd.supabase.co`)
+* **Déploiement Cloud** : Vercel
+* **Dépôt GitHub** : `https://github.com/baroubagroup/ouaga-librairie-pos.git`
+
+---
+
+## 🔒 Sécurité & Audit SHA-256
+Chaque transaction, vente, réapprovisionnement de stock et clôture de caisse est horodatée et scellée dans une chaîne immuable SHA-256 garantissant zéro fraude et une traçabilité totale.
