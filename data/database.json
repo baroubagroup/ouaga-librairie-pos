@@ -1,0 +1,1345 @@
+{
+  "settings": {
+    "shopName": "Secrétariat Public & Librairie Le Progrès",
+    "tagline": "Fournitures scolaires - Bureautique - Photocopies & Impressions - Saisie",
+    "phone1": "+226 70 00 11 22",
+    "phone2": "+226 76 33 44 55 (WhatsApp)",
+    "city": "Ouagadougou",
+    "address": "Secteur 28, face au Lycée Bogodogo",
+    "ifu": "00123456Z",
+    "rccm": "BF OUA 2024 A 1234",
+    "invoicePrefix": "FAC-2026-",
+    "currency": "FCFA",
+    "footerNotice": "Les marchandises vendues ne sont ni reprises ni échangées après 48h. Merci de votre confiance !",
+    "logo": "",
+    "multiUserEnabled": true
+  },
+  "articles": [
+    {
+      "id": "art-1",
+      "name": "Photocopie A4 N&B (Recto)",
+      "category": "service",
+      "salePrice": 25,
+      "isBulkManaged": false,
+      "stock": 9999,
+      "unitSale": "page",
+      "costPrice": 8,
+      "isService": true
+    },
+    {
+      "id": "art-2",
+      "name": "Photocopie A4 N&B (Recto-Verso)",
+      "category": "service",
+      "salePrice": 50,
+      "isBulkManaged": false,
+      "stock": 9999,
+      "unitSale": "page",
+      "costPrice": 15,
+      "isService": true
+    },
+    {
+      "id": "art-3",
+      "name": "Impression A4 N&B",
+      "category": "service",
+      "salePrice": 100,
+      "isBulkManaged": false,
+      "stock": 9999,
+      "unitSale": "page",
+      "costPrice": 25,
+      "isService": true
+    },
+    {
+      "id": "art-4",
+      "name": "Impression A4 Couleur",
+      "category": "service",
+      "salePrice": 250,
+      "isBulkManaged": false,
+      "stock": 9999,
+      "unitSale": "page",
+      "costPrice": 80,
+      "isService": true
+    },
+    {
+      "id": "art-5",
+      "name": "Saisie de document (Page standard)",
+      "category": "service",
+      "salePrice": 500,
+      "isBulkManaged": false,
+      "stock": 9999,
+      "unitSale": "page",
+      "costPrice": 0,
+      "isService": true
+    },
+    {
+      "id": "art-6",
+      "name": "Stylo Bic Cristal (Bleu / Noir / Rouge)",
+      "category": "fourniture",
+      "salePrice": 100,
+      "isBulkManaged": true,
+      "bulkName": "Boîte de 50 stylos",
+      "bulkQuantity": 50,
+      "bulkPurchaseCost": 3500,
+      "costPrice": 70,
+      "stock": 227,
+      "minAlertStock": 25,
+      "unitSale": "stylo",
+      "isService": false
+    },
+    {
+      "id": "art-7",
+      "name": "Cahier 100 pages (Format 17x22)",
+      "category": "fourniture",
+      "salePrice": 350,
+      "isBulkManaged": true,
+      "bulkName": "Paquet de 10 cahiers",
+      "bulkQuantity": 10,
+      "bulkPurchaseCost": 2800,
+      "costPrice": 280,
+      "stock": 59,
+      "minAlertStock": 15,
+      "unitSale": "cahier",
+      "isService": false
+    },
+    {
+      "id": "art-8",
+      "name": "Cahier 200 pages (Format 17x22)",
+      "category": "fourniture",
+      "salePrice": 650,
+      "isBulkManaged": true,
+      "bulkName": "Paquet de 10 cahiers",
+      "bulkQuantity": 10,
+      "bulkPurchaseCost": 5200,
+      "costPrice": 520,
+      "stock": 46,
+      "minAlertStock": 10,
+      "unitSale": "cahier",
+      "isService": false
+    },
+    {
+      "id": "art-9",
+      "name": "Rame Papier A4 Double A (80g)",
+      "category": "fourniture",
+      "salePrice": 4000,
+      "isBulkManaged": true,
+      "bulkName": "Carton de 5 rames",
+      "bulkQuantity": 5,
+      "bulkPurchaseCost": 17500,
+      "costPrice": 3500,
+      "stock": 16,
+      "minAlertStock": 5,
+      "unitSale": "rame",
+      "isService": false
+    },
+    {
+      "id": "art-10",
+      "name": "Chemise cartonnée rabat",
+      "category": "fourniture",
+      "salePrice": 150,
+      "isBulkManaged": true,
+      "bulkName": "Paquet de 50 chemises",
+      "bulkQuantity": 50,
+      "bulkPurchaseCost": 5000,
+      "costPrice": 100,
+      "stock": 82,
+      "minAlertStock": 20,
+      "unitSale": "chemise",
+      "isService": false
+    },
+    {
+      "id": "art-11",
+      "name": "Plastification document A4",
+      "category": "service",
+      "salePrice": 300,
+      "isBulkManaged": false,
+      "stock": 9999,
+      "unitSale": "pièce",
+      "costPrice": 75,
+      "isService": true
+    },
+    {
+      "id": "art-12",
+      "name": "Reliure spirale (dossier classique)",
+      "category": "service",
+      "salePrice": 500,
+      "isBulkManaged": false,
+      "stock": 9999,
+      "unitSale": "dossier",
+      "costPrice": 120,
+      "isService": true
+    },
+    {
+      "id": "art-13",
+      "name": "Option Agrafage dossier lourd (> 15p)",
+      "category": "service",
+      "salePrice": 50,
+      "isBulkManaged": false,
+      "stock": 9999,
+      "unitSale": "service",
+      "costPrice": 5,
+      "isService": true
+    },
+    {
+      "name": "KKKK",
+      "category": "fourniture",
+      "isService": false,
+      "salePrice": 100,
+      "unitSale": "BIC",
+      "isBulkManaged": true,
+      "bulkName": "CARTON BIC",
+      "bulkQuantity": 20,
+      "bulkPurchaseCost": 1000,
+      "costPrice": 44,
+      "stock": 124,
+      "minAlertStock": 10,
+      "id": "art-1794583684510"
+    },
+    {
+      "name": "Cahier TP 200p",
+      "category": "fourniture",
+      "salePrice": 750,
+      "stock": 20,
+      "minAlertStock": 5,
+      "unitSale": "cahier",
+      "isService": false,
+      "id": "art-1794595053696"
+    },
+    {
+      "name": "Correcteur Blanc Tipp-Ex Pocket",
+      "category": "fourniture",
+      "salePrice": 500,
+      "stock": 24,
+      "minAlertStock": 6,
+      "unitSale": "flacon",
+      "isBulkManaged": true,
+      "bulkName": "Pack de 10 flacons",
+      "bulkQuantity": 10,
+      "bulkPurchaseCost": 3500,
+      "costPrice": 350,
+      "iconType": "pen",
+      "updatedBy": "M. Ouédraogo",
+      "id": "art-1794595650173"
+    }
+  ],
+  "sales": [
+    {
+      "id": "sale-1794604092046",
+      "timestamp": "2026-11-13T21:08:12.046Z",
+      "items": [
+        {
+          "articleId": "art-2",
+          "name": "Photocopie A4 N&B (Recto-Verso)",
+          "unitPrice": 50,
+          "quantity": 1,
+          "total": 50,
+          "isService": true
+        },
+        {
+          "articleId": "art-3",
+          "name": "Impression A4 N&B",
+          "unitPrice": 100,
+          "quantity": 1,
+          "total": 100,
+          "isService": true
+        },
+        {
+          "articleId": "art-11",
+          "name": "Plastification document A4",
+          "unitPrice": 300,
+          "quantity": 1,
+          "total": 300,
+          "isService": true
+        }
+      ],
+      "totalAmount": 450,
+      "paymentMethod": "cash",
+      "amountTendered": 500,
+      "changeGiven": 50,
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "customerCompany": "",
+      "sellerName": "M. Ouédraogo (Propriétaire)",
+      "sellerRole": "gerant",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": false,
+      "note": ""
+    },
+    {
+      "id": "sale-1794597597066",
+      "timestamp": "2026-11-13T19:19:57.066Z",
+      "items": [
+        {
+          "articleId": "art-1",
+          "name": "Photocopie A4 N&B (Recto)",
+          "unitPrice": 25,
+          "quantity": 1,
+          "total": 25,
+          "isService": true
+        }
+      ],
+      "totalAmount": 25,
+      "paymentMethod": "cash",
+      "amountTendered": 25,
+      "changeGiven": 0,
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "customerCompany": "",
+      "sellerName": "M. Ouédraogo (Propriétaire)",
+      "sellerRole": "gerant",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": false,
+      "note": ""
+    },
+    {
+      "id": "sale-1794597591754",
+      "timestamp": "2026-11-13T19:19:51.754Z",
+      "items": [
+        {
+          "articleId": "art-1",
+          "name": "Photocopie A4 N&B (Recto)",
+          "unitPrice": 25,
+          "quantity": 3,
+          "total": 75,
+          "isService": true
+        },
+        {
+          "articleId": "art-3",
+          "name": "Impression A4 N&B",
+          "unitPrice": 100,
+          "quantity": 1,
+          "total": 100,
+          "isService": true
+        },
+        {
+          "articleId": "art-6",
+          "name": "Stylo Bic Cristal (Bleu / Noir / Rouge)",
+          "unitPrice": 100,
+          "quantity": 1,
+          "total": 100,
+          "isService": false
+        }
+      ],
+      "totalAmount": 275,
+      "paymentMethod": "cash",
+      "amountTendered": 275,
+      "changeGiven": 0,
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "customerCompany": "",
+      "sellerName": "M. Ouédraogo (Propriétaire)",
+      "sellerRole": "gerant",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": false,
+      "note": ""
+    },
+    {
+      "id": "sale-1794587519723-de72",
+      "timestamp": "2026-11-13T16:31:59.723Z",
+      "items": [
+        {
+          "articleId": "art-6",
+          "name": "Stylo Bic Cristal (Bleu / Noir / Rouge)",
+          "quantity": 10,
+          "unitPrice": 100,
+          "total": 1000
+        }
+      ],
+      "totalAmount": 1000,
+      "paymentMethod": "credit",
+      "amountTendered": 1000,
+      "changeGiven": 0,
+      "customerName": "Maître Sawadogo Cabinet",
+      "customerPhone": "+226 70 00 11 22",
+      "customerCompany": "Cabinet Juridique Sawadogo",
+      "sellerName": "Gérant",
+      "sellerRole": "gerant",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": false,
+      "note": "Dossier urgent, règlement fin de mois"
+    },
+    {
+      "id": "sale-credrec-1794585589077",
+      "timestamp": "2026-11-13T15:59:49.077Z",
+      "items": [
+        {
+          "articleId": "rec-credit",
+          "name": "Règlement Crédit : M. Kaboré (Directeur Collège)",
+          "quantity": 1,
+          "unitPrice": 5000,
+          "total": 5000,
+          "isService": true,
+          "isCreditSettlement": true
+        }
+      ],
+      "totalAmount": 5000,
+      "paymentMethod": "orange_money",
+      "amountTendered": 5000,
+      "changeGiven": 0,
+      "customerName": "M. Kaboré (Directeur Collège)",
+      "customerPhone": "+226 71 22 33 44",
+      "sellerName": "Aminata",
+      "deviceSource": "desktop",
+      "note": "Paiement sur crédit crd-1794585571438",
+      "isCreditSettlement": true,
+      "type": "credit_payment"
+    },
+    {
+      "id": "sale-1794585571438-39b0",
+      "timestamp": "2026-11-13T15:59:31.438Z",
+      "items": [
+        {
+          "unitPrice": 4000,
+          "articleId": "art-10",
+          "name": "Rame Papier A4 Double A (80g)",
+          "total": 8000,
+          "quantity": 2
+        }
+      ],
+      "totalAmount": 8000,
+      "paymentMethod": "credit",
+      "amountTendered": 8000,
+      "changeGiven": 0,
+      "customerName": "M. Kaboré (Directeur Collège)",
+      "customerPhone": "+226 71 22 33 44",
+      "customerCompany": "Collège Privé Sainte-Famille",
+      "sellerName": "Aminata (Caissière)",
+      "sellerRole": "vendeur",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": false,
+      "note": ""
+    },
+    {
+      "id": "sale-1794584446898",
+      "timestamp": "2026-11-13T15:40:46.898Z",
+      "items": [
+        {
+          "articleId": "art-10",
+          "name": "Chemise cartonnée rabat",
+          "unitPrice": 150,
+          "quantity": 1,
+          "total": 150,
+          "isService": false
+        },
+        {
+          "articleId": "art-7",
+          "name": "Cahier 100 pages (Format 17x22)",
+          "unitPrice": 350,
+          "quantity": 5,
+          "total": 1750,
+          "isService": false
+        }
+      ],
+      "totalAmount": 1900,
+      "paymentMethod": "credit",
+      "amountTendered": 1900,
+      "changeGiven": 0,
+      "customerName": "2222",
+      "customerPhone": "",
+      "sellerName": "Vendeur Caisse",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": true
+    },
+    {
+      "id": "sale-1794584298525",
+      "timestamp": "2026-11-13T15:38:18.525Z",
+      "items": [
+        {
+          "articleId": "art-5",
+          "name": "Saisie de document (Page standard)",
+          "unitPrice": 500,
+          "quantity": 1,
+          "total": 500,
+          "isService": true
+        },
+        {
+          "articleId": "art-4",
+          "name": "Impression A4 Couleur",
+          "unitPrice": 250,
+          "quantity": 1,
+          "total": 250,
+          "isService": true
+        },
+        {
+          "articleId": "art-9",
+          "name": "Rame Papier A4 Double A (80g)",
+          "unitPrice": 4000,
+          "quantity": 1,
+          "total": 4000,
+          "isService": false
+        }
+      ],
+      "totalAmount": 4750,
+      "paymentMethod": "orange_money",
+      "amountTendered": 4750,
+      "changeGiven": 0,
+      "customerName": "SAKO",
+      "customerPhone": "",
+      "sellerName": "Vendeur Caisse",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": true
+    },
+    {
+      "id": "sale-1794584262470",
+      "timestamp": "2026-11-13T15:37:42.470Z",
+      "items": [
+        {
+          "articleId": "art-1794583684510",
+          "name": "KKKK",
+          "unitPrice": 100,
+          "quantity": 1,
+          "total": 100,
+          "isService": false
+        },
+        {
+          "articleId": "art-13",
+          "name": "Option Agrafage dossier lourd (> 15p)",
+          "unitPrice": 50,
+          "quantity": 1,
+          "total": 50,
+          "isService": true
+        },
+        {
+          "articleId": "art-8",
+          "name": "Cahier 200 pages (Format 17x22)",
+          "unitPrice": 650,
+          "quantity": 1,
+          "total": 650,
+          "isService": false
+        },
+        {
+          "articleId": "art-7",
+          "name": "Cahier 100 pages (Format 17x22)",
+          "unitPrice": 350,
+          "quantity": 1,
+          "total": 350,
+          "isService": false
+        }
+      ],
+      "totalAmount": 1150,
+      "paymentMethod": "orange_money",
+      "amountTendered": 1150,
+      "changeGiven": 0,
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "sellerName": "Vendeur Caisse",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": true
+    },
+    {
+      "id": "sale-1794584240604",
+      "timestamp": "2026-11-13T15:37:20.604Z",
+      "items": [
+        {
+          "articleId": "art-9",
+          "name": "Rame Papier A4 Double A (80g)",
+          "unitPrice": 4000,
+          "quantity": 1,
+          "total": 4000,
+          "isService": false
+        },
+        {
+          "articleId": "art-5",
+          "name": "Saisie de document (Page standard)",
+          "unitPrice": 500,
+          "quantity": 1,
+          "total": 500,
+          "isService": true
+        },
+        {
+          "articleId": "art-8",
+          "name": "Cahier 200 pages (Format 17x22)",
+          "unitPrice": 650,
+          "quantity": 1,
+          "total": 650,
+          "isService": false
+        }
+      ],
+      "totalAmount": 5150,
+      "paymentMethod": "cash",
+      "amountTendered": 5150,
+      "changeGiven": 0,
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "sellerName": "Vendeur Caisse",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": false
+    },
+    {
+      "id": "sale-1794584234400",
+      "timestamp": "2026-11-13T15:37:14.400Z",
+      "items": [
+        {
+          "articleId": "art-1",
+          "name": "Photocopie A4 N&B (Recto)",
+          "unitPrice": 25,
+          "quantity": 1,
+          "total": 25,
+          "isService": true
+        }
+      ],
+      "totalAmount": 25,
+      "paymentMethod": "cash",
+      "amountTendered": 25,
+      "changeGiven": 0,
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "sellerName": "Vendeur Caisse",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": false
+    },
+    {
+      "id": "sale-offline-1794584194109",
+      "timestamp": "2026-11-13T15:36:34.109Z",
+      "items": [
+        {
+          "name": "Stylo Bic Cristal Bleu",
+          "quantity": 2,
+          "unitPrice": 100,
+          "total": 200,
+          "isService": false
+        },
+        {
+          "name": "Photocopie A4 N&B",
+          "quantity": 10,
+          "unitPrice": 25,
+          "total": 250,
+          "isService": true
+        }
+      ],
+      "totalAmount": 450,
+      "paymentMethod": "cash",
+      "customerName": "Client Délestage Sonabel",
+      "deviceSource": "android_backup"
+    },
+    {
+      "id": "sale-1794583187466",
+      "timestamp": "2026-11-13T15:19:47.466Z",
+      "items": [
+        {
+          "articleId": "art-6",
+          "name": "Stylo Bic Cristal (Bleu / Noir / Rouge)",
+          "unitPrice": 100,
+          "quantity": 1,
+          "total": 100,
+          "isService": false
+        },
+        {
+          "articleId": "art-5",
+          "name": "Saisie de document (Page standard)",
+          "unitPrice": 500,
+          "quantity": 1,
+          "total": 500,
+          "isService": true
+        }
+      ],
+      "totalAmount": 600,
+      "paymentMethod": "cash",
+      "amountTendered": 600,
+      "changeGiven": 0,
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "sellerName": "Vendeur Caisse",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": true
+    },
+    {
+      "id": "sale-1794583177289",
+      "timestamp": "2026-11-13T15:19:37.289Z",
+      "items": [
+        {
+          "articleId": "art-1",
+          "name": "Photocopie A4 N&B (Recto)",
+          "unitPrice": 25,
+          "quantity": 1,
+          "total": 25,
+          "isService": true
+        }
+      ],
+      "totalAmount": 25,
+      "paymentMethod": "cash",
+      "amountTendered": 50,
+      "changeGiven": 25,
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "sellerName": "Vendeur Caisse",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": false
+    },
+    {
+      "id": "sale-1794582928712-2e72b7",
+      "timestamp": "2026-11-13T15:15:28.714Z",
+      "items": [
+        {
+          "unitPrice": 100,
+          "articleId": "art-6",
+          "name": "Stylo Bic Cristal (Bleu)",
+          "total": 300,
+          "quantity": 3
+        },
+        {
+          "unitPrice": 25,
+          "articleId": "art-1",
+          "name": "Photocopie A4 N&B (Recto)",
+          "total": 500,
+          "quantity": 20
+        }
+      ],
+      "totalAmount": 800,
+      "paymentMethod": "cash",
+      "amountTendered": 800,
+      "changeGiven": 0,
+      "customerName": "Professeur Ouédraogo",
+      "customerPhone": "",
+      "sellerName": "Vendeur Caisse",
+      "deviceSource": "desktop",
+      "isInvoiceGenerated": false
+    }
+  ],
+  "expenses": [
+    {
+      "id": "exp-1794584033619",
+      "timestamp": "2026-11-13T15:33:53.619Z",
+      "amount": 5000,
+      "category": "credit_appel",
+      "description": "",
+      "beneficiary": "NUIO",
+      "recordedBy": "Gérant"
+    },
+    {
+      "id": "exp-1794582973859",
+      "timestamp": "2026-11-13T15:16:13.859Z",
+      "amount": 2000,
+      "category": "sonabel",
+      "description": "Recharge électricité compteur Sonabel",
+      "beneficiary": "Gérant",
+      "recordedBy": "Gérant"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv-1794599966145",
+      "invoiceNumber": "FAC-2026-0006",
+      "date": "2026-11-13",
+      "time": "19:59:26",
+      "customerName": "Cabinet Notarial Me Sanou",
+      "customerPhone": "+226 70 88 99 11",
+      "customerCompany": "Dossier Acquisition",
+      "customerAddress": "Ouaga 2000",
+      "customerIfu": "",
+      "items": [
+        {
+          "name": "Reliure thermique 50 pages",
+          "quantity": 4,
+          "unitPrice": 1500,
+          "total": 6000
+        }
+      ],
+      "totalAmount": 6000,
+      "amountInWords": "",
+      "paymentStatus": "payé",
+      "paymentMethod": "Espèces",
+      "note": ""
+    },
+    {
+      "id": "inv-1794584447228",
+      "invoiceNumber": "FAC-2026-0005",
+      "date": "2026-11-13",
+      "time": "16:19:09",
+      "customerName": "2222",
+      "customerPhone": "Non renseigné",
+      "customerCompany": "Vente directe au comptoir",
+      "customerAddress": "Ouagadougou",
+      "customerIfu": "",
+      "items": [
+        {
+          "name": "Chemise cartonnée rabat",
+          "quantity": 1,
+          "unitPrice": 150,
+          "total": 150
+        },
+        {
+          "name": "Cahier 100 pages (Format 17x22)",
+          "quantity": 5,
+          "unitPrice": 350,
+          "total": 1750
+        },
+        {
+          "name": "Nouvel article ou prestation",
+          "quantity": 1,
+          "unitPrice": 500,
+          "total": 500
+        }
+      ],
+      "totalAmount": 2400,
+      "amountInWords": "Deux mille quatre cents (2 400 FCFA)",
+      "paymentStatus": "payé",
+      "paymentMethod": "cash",
+      "note": ""
+    },
+    {
+      "id": "inv-1794584298854",
+      "invoiceNumber": "FAC-2026-0004",
+      "date": "2026-11-13",
+      "time": "15:38:18",
+      "customerName": "SAKO",
+      "customerPhone": "",
+      "customerCompany": "Vente directe au comptoir",
+      "customerAddress": "Ouagadougou",
+      "customerIfu": "",
+      "items": [
+        {
+          "name": "Saisie de document (Page standard)",
+          "quantity": 1,
+          "unitPrice": 500,
+          "total": 500
+        },
+        {
+          "name": "Impression A4 Couleur",
+          "quantity": 1,
+          "unitPrice": 250,
+          "total": 250
+        },
+        {
+          "name": "Rame Papier A4 Double A (80g)",
+          "quantity": 1,
+          "unitPrice": 4000,
+          "total": 4000
+        }
+      ],
+      "totalAmount": 4750,
+      "amountInWords": "Quatre mille sept cent cinquante (4 750 FCFA)",
+      "paymentStatus": "payé",
+      "paymentMethod": "orange_money",
+      "note": ""
+    },
+    {
+      "id": "inv-1794584262494",
+      "invoiceNumber": "FAC-2026-0003",
+      "date": "2026-11-13",
+      "time": "15:37:42",
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "customerCompany": "Vente directe au comptoir",
+      "customerAddress": "Ouagadougou",
+      "customerIfu": "",
+      "items": [
+        {
+          "name": "KKKK",
+          "quantity": 1,
+          "unitPrice": 100,
+          "total": 100
+        },
+        {
+          "name": "Option Agrafage dossier lourd (> 15p)",
+          "quantity": 1,
+          "unitPrice": 50,
+          "total": 50
+        },
+        {
+          "name": "Cahier 200 pages (Format 17x22)",
+          "quantity": 1,
+          "unitPrice": 650,
+          "total": 650
+        },
+        {
+          "name": "Cahier 100 pages (Format 17x22)",
+          "quantity": 1,
+          "unitPrice": 350,
+          "total": 350
+        }
+      ],
+      "totalAmount": 1150,
+      "amountInWords": "Mille cent cinquante (1 150 FCFA)",
+      "paymentStatus": "payé",
+      "paymentMethod": "orange_money",
+      "note": ""
+    },
+    {
+      "id": "inv-1794583187488",
+      "invoiceNumber": "FAC-2026-0002",
+      "date": "2026-11-13",
+      "time": "15:19:47",
+      "customerName": "Client Comptoir",
+      "customerPhone": "",
+      "customerCompany": "Vente directe au comptoir",
+      "customerAddress": "Ouagadougou",
+      "customerIfu": "",
+      "items": [
+        {
+          "name": "Stylo Bic Cristal (Bleu / Noir / Rouge)",
+          "quantity": 1,
+          "unitPrice": 100,
+          "total": 100
+        },
+        {
+          "name": "Saisie de document (Page standard)",
+          "quantity": 1,
+          "unitPrice": 500,
+          "total": 500
+        }
+      ],
+      "totalAmount": 600,
+      "amountInWords": "Six cents (600 FCFA)",
+      "paymentStatus": "payé",
+      "paymentMethod": "cash",
+      "note": ""
+    },
+    {
+      "id": "inv-1794582985553",
+      "invoiceNumber": "FAC-2026-0001",
+      "date": "2026-11-13",
+      "time": "15:16:25",
+      "customerName": "Lycée Mixte de Gounghin",
+      "customerPhone": "+226 70 88 99 00",
+      "customerCompany": "Direction - Fournitures examens blancs",
+      "customerAddress": "Ouagadougou, Secteur 9",
+      "customerIfu": "",
+      "items": [
+        {
+          "unitPrice": 4000,
+          "quantity": 5,
+          "name": "Rame Papier A4 Double A (80g)",
+          "total": 20000
+        },
+        {
+          "unitPrice": 4500,
+          "quantity": 2,
+          "name": "Stylo Bic Cristal Bleu (Boîte de 50)",
+          "total": 9000
+        },
+        {
+          "unitPrice": 25,
+          "quantity": 400,
+          "name": "Photocopie Sujets Épreuves A4 N&B",
+          "total": 10000
+        }
+      ],
+      "totalAmount": 39000,
+      "amountInWords": "Trente-neuf mille (39 000) Francs CFA",
+      "paymentStatus": "payé",
+      "paymentMethod": "cash",
+      "note": ""
+    }
+  ],
+  "dailyCloses": [],
+  "credits": [
+    {
+      "id": "crd-1794587519723",
+      "saleId": "sale-1794587519723-de72",
+      "date": "2026-11-13",
+      "customerName": "Maître Sawadogo Cabinet",
+      "customerPhone": "+226 70 00 11 22",
+      "customerStructure": "Cabinet Juridique Sawadogo",
+      "totalAmount": 1000,
+      "paidAmount": 0,
+      "remainingAmount": 1000,
+      "status": "en_cours",
+      "note": "Dossier urgent, règlement fin de mois",
+      "payments": []
+    },
+    {
+      "id": "crd-1794585571438",
+      "saleId": "sale-1794585571438-39b0",
+      "date": "2026-11-13",
+      "customerName": "M. Kaboré (Directeur Collège)",
+      "customerPhone": "+226 71 22 33 44",
+      "customerStructure": "Collège Privé Sainte-Famille",
+      "totalAmount": 8000,
+      "paidAmount": 5000,
+      "remainingAmount": 3000,
+      "status": "en_cours",
+      "note": "Vente à crédit enregistrée au comptoir",
+      "payments": [
+        {
+          "id": "pay-1794585589019",
+          "date": "2026-11-13",
+          "time": "15:59:49",
+          "amount": 5000,
+          "method": "orange_money",
+          "receivedBy": "Aminata",
+          "note": "Versement partiel reçuu par Orange Money"
+        }
+      ]
+    },
+    {
+      "id": "crd-1",
+      "saleId": "sale-demo-1",
+      "date": "2026-11-13",
+      "customerName": "M. Sawadogo (Directeur École)",
+      "customerPhone": "+226 70 12 34 56",
+      "customerStructure": "Complexe Scolaire Wend-Panga",
+      "totalAmount": 18500,
+      "paidAmount": 5000,
+      "remainingAmount": 13500,
+      "status": "en_cours",
+      "note": "Commande de ramettes pour examens de fin de trimestre",
+      "payments": [
+        {
+          "id": "pay-1",
+          "date": "2026-11-13",
+          "amount": 5000,
+          "method": "cash",
+          "receivedBy": "Aminata",
+          "note": "Acompte versé à la commande"
+        }
+      ]
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "sup-1",
+      "name": "Établissement Diallo & Frères (Rood-Woko)",
+      "phone": "+226 76 11 22 33",
+      "address": "Grand Marché Rood-Woko, Hall C N° 45",
+      "articlesSupplied": "Rames papier, Stylos Bic, Fournitures",
+      "totalPurchases": 7000,
+      "totalPaid": 2000,
+      "currentDebt": 5000,
+      "ordersHistory": [
+        {
+          "id": "ord-1794587508480",
+          "date": "2026-11-13",
+          "articleName": "Stylo Bic Cristal (Bleu / Noir / Rouge)",
+          "quantityDesc": "2 carton(s) / 100 stylo",
+          "totalCost": 7000,
+          "paidUpfront": 2000,
+          "debtAdded": 5000,
+          "paymentType": "credit",
+          "invoiceRef": "BL-TEST-101"
+        },
+        {
+          "id": "ord-1794587474608",
+          "date": "2026-11-13",
+          "articleName": "Stylo Bic Cristal (Bleu / Noir / Rouge)",
+          "quantityDesc": "0 carton(s) / 0 stylo",
+          "totalCost": 0,
+          "paidUpfront": 0,
+          "debtAdded": 0,
+          "paymentType": "cash",
+          "invoiceRef": ""
+        }
+      ]
+    },
+    {
+      "id": "sup-2",
+      "name": "Librairie Papeterie Grossiste du Centre",
+      "phone": "+226 25 30 40 50",
+      "address": "Avenue Kwamé N'Krumah, Ouaga",
+      "articlesSupplied": "Cahiers, Chemises, Matériel bureautique"
+    }
+  ],
+  "supplierDebts": [
+    {
+      "id": "sdeb-1794587508480",
+      "supplierId": "sup-1",
+      "supplierName": "Établissement Diallo & Frères (Rood-Woko)",
+      "date": "2026-11-13",
+      "invoiceRef": "BL-TEST-101",
+      "totalAmount": 7000,
+      "paidAmount": 2000,
+      "remainingAmount": 5000,
+      "status": "en_cours",
+      "description": "Approvisionnement Stylo Bic Cristal (Bleu / Noir / Rouge) (100 unités)",
+      "payments": [
+        {
+          "id": "spay-1794587508480",
+          "date": "2026-11-13",
+          "amount": 2000,
+          "method": "cash",
+          "paidBy": "Gérant",
+          "note": "Acompte versé à la livraison"
+        }
+      ]
+    },
+    {
+      "id": "sdeb-1",
+      "supplierId": "sup-1",
+      "supplierName": "Établissement Diallo & Frères (Rood-Woko)",
+      "date": "2026-11-13",
+      "invoiceRef": "BON-DW-889",
+      "totalAmount": 70000,
+      "paidAmount": 35000,
+      "remainingAmount": 35000,
+      "status": "en_cours",
+      "description": "Achat de 4 cartons de Rames Double A à crédit",
+      "payments": [
+        {
+          "id": "spay-1",
+          "date": "2026-11-13",
+          "amount": 35000,
+          "method": "orange_money",
+          "paidBy": "M. Ouédraogo",
+          "note": "Avance payée par Orange Money à la livraison"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-1",
+      "name": "M. Ouédraogo (Propriétaire)",
+      "role": "gerant",
+      "pin": "1234",
+      "active": true
+    },
+    {
+      "id": "usr-2",
+      "name": "Aminata (Caissière)",
+      "role": "vendeur",
+      "pin": "0000",
+      "active": true
+    },
+    {
+      "id": "usr-3",
+      "name": "Karim (Opérateur Saisie)",
+      "role": "vendeur",
+      "pin": "1111",
+      "active": true
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1794604092399-33f0",
+      "timestamp": "2026-11-13T21:08:12.397Z",
+      "action": "VENTE_ENCAISSEE",
+      "actorName": "M. Ouédraogo (Propriétaire)",
+      "actorRole": "gerant",
+      "details": {
+        "saleId": "sale-1794604092046",
+        "montant": 450,
+        "mode": "cash",
+        "client": "Client Comptoir"
+      },
+      "prevHash": "2b1ccfe43875b9288a511424b74f5f491982eb48ed186b6c4cb4c64dd1058733",
+      "hash": "7e17bc648319f77aca5b4bb6b927adbe5fc43c6ded8acc3af3131878e41d2342"
+    },
+    {
+      "id": "log-1794599966363-5663",
+      "timestamp": "2026-11-13T19:59:26.363Z",
+      "action": "CREATION_FACTURE_A4",
+      "actorName": "Gérant",
+      "actorRole": "gerant",
+      "details": {
+        "facture": "FAC-2026-0006",
+        "client": "Cabinet Notarial Me Sanou",
+        "total": 6000
+      },
+      "prevHash": "d6a6591de27f4f9abf80175fbf170ebd97bbdd90e2d601ec00059710c73d25f1",
+      "hash": "2b1ccfe43875b9288a511424b74f5f491982eb48ed186b6c4cb4c64dd1058733"
+    },
+    {
+      "id": "log-1794597597080-c458",
+      "timestamp": "2026-11-13T19:19:57.079Z",
+      "action": "VENTE_ENCAISSEE",
+      "actorName": "M. Ouédraogo (Propriétaire)",
+      "actorRole": "gerant",
+      "details": {
+        "saleId": "sale-1794597597066",
+        "montant": 25,
+        "mode": "cash",
+        "client": "Client Comptoir"
+      },
+      "prevHash": "8c96b6e8afda778fcc1474db4a0c8734e41eeba21c9a10bced0aec795ce95d30",
+      "hash": "d6a6591de27f4f9abf80175fbf170ebd97bbdd90e2d601ec00059710c73d25f1"
+    },
+    {
+      "id": "log-1794597592298-3960",
+      "timestamp": "2026-11-13T19:19:52.295Z",
+      "action": "VENTE_ENCAISSEE",
+      "actorName": "M. Ouédraogo (Propriétaire)",
+      "actorRole": "gerant",
+      "details": {
+        "saleId": "sale-1794597591754",
+        "montant": 275,
+        "mode": "cash",
+        "client": "Client Comptoir"
+      },
+      "prevHash": "1ed118e8925f5dd914fac18637633e7c9aa6cbc8c6a2659f9463e1444519ab32",
+      "hash": "8c96b6e8afda778fcc1474db4a0c8734e41eeba21c9a10bced0aec795ce95d30"
+    },
+    {
+      "id": "log-1794595650174-9cba",
+      "timestamp": "2026-11-13T18:47:30.174Z",
+      "action": "CREATION_ARTICLE",
+      "actorName": "M. Ouédraogo",
+      "actorRole": "gerant",
+      "details": {
+        "nom": "Correcteur Blanc Tipp-Ex Pocket",
+        "prix": 500
+      },
+      "prevHash": "ec35dc1ce664ff934f354e49d90d842f01c4d2026750ee37481a64a40c43533d",
+      "hash": "1ed118e8925f5dd914fac18637633e7c9aa6cbc8c6a2659f9463e1444519ab32"
+    },
+    {
+      "id": "log-1794595053732-8083",
+      "timestamp": "2026-11-13T18:37:33.706Z",
+      "action": "CREATION_ARTICLE",
+      "actorName": "Gérant",
+      "actorRole": "gerant",
+      "details": {
+        "nom": "Cahier TP 200p",
+        "prix": 750
+      },
+      "prevHash": "2dda19e81a62908f87296965d7d079698b15a3ba17ce91fe8affa815e63326cc",
+      "hash": "ec35dc1ce664ff934f354e49d90d842f01c4d2026750ee37481a64a40c43533d"
+    },
+    {
+      "id": "log-1794587519723-6848",
+      "timestamp": "2026-11-13T16:31:59.723Z",
+      "action": "VENTE_CREDIT",
+      "actorName": "Gérant",
+      "actorRole": "gerant",
+      "details": {
+        "saleId": "sale-1794587519723-de72",
+        "client": "Maître Sawadogo Cabinet",
+        "phone": "+226 70 00 11 22",
+        "montant": 1000
+      },
+      "prevHash": "577cd5866391bf49397a55a86d41b9492b602fe55e82613c2f21daef00de76a7",
+      "hash": "2dda19e81a62908f87296965d7d079698b15a3ba17ce91fe8affa815e63326cc"
+    },
+    {
+      "id": "log-1794587508480-740f",
+      "timestamp": "2026-11-13T16:31:48.480Z",
+      "action": "REAPPROVISIONNEMENT_FOURNISSEUR",
+      "actorName": "Gérant",
+      "actorRole": "gerant",
+      "details": {
+        "article": "Stylo Bic Cristal (Bleu / Noir / Rouge)",
+        "quantiteAjoutee": 100,
+        "fournisseur": "Établissement Diallo & Frères (Rood-Woko)",
+        "coutTotal": 7000,
+        "mode": "credit",
+        "detteCreee": 5000
+      },
+      "prevHash": "40d6195a1dee36812ca05e23f6e1bdc071b69eae812366af74128cfb9fb027a0",
+      "hash": "577cd5866391bf49397a55a86d41b9492b602fe55e82613c2f21daef00de76a7"
+    },
+    {
+      "id": "log-1794587474609-e8ec",
+      "timestamp": "2026-11-13T16:31:14.608Z",
+      "action": "REAPPROVISIONNEMENT_FOURNISSEUR",
+      "actorName": "Gérant",
+      "actorRole": "gerant",
+      "details": {
+        "article": "Stylo Bic Cristal (Bleu / Noir / Rouge)",
+        "quantiteAjoutee": 0,
+        "fournisseur": "Établissement Diallo & Frères (Rood-Woko)",
+        "coutTotal": 0,
+        "detteCreee": 0
+      },
+      "prevHash": "c54351a9c15853b9d4e7f85bca00e53716b0a46ba79f3e5f7956566a9f94ad79",
+      "hash": "40d6195a1dee36812ca05e23f6e1bdc071b69eae812366af74128cfb9fb027a0"
+    },
+    {
+      "id": "log-1794586749368-7806",
+      "timestamp": "2026-11-13T16:19:09.366Z",
+      "action": "MODIFICATION_FACTURE_A4",
+      "actorName": "Gérant",
+      "actorRole": "gerant",
+      "details": {
+        "facture": "FAC-2026-0005",
+        "client": "2222",
+        "total": 2400
+      },
+      "prevHash": "810ad0fa7306c5dfe4644ae22930aa8d92d1458044c521bc3924e2bdf26683cb",
+      "hash": "c54351a9c15853b9d4e7f85bca00e53716b0a46ba79f3e5f7956566a9f94ad79"
+    },
+    {
+      "id": "log-1794586410053-7b00",
+      "timestamp": "2026-11-13T16:13:30.053Z",
+      "action": "MODIFICATION_FACTURE_A4",
+      "actorName": "Gérant",
+      "actorRole": "gerant",
+      "details": {
+        "facture": "FAC-2026-0005",
+        "client": "2222",
+        "total": 2400
+      },
+      "prevHash": "cc0841fb2e0b8fbdc3c2bac44fd09ed33cd8bf92fd75cce53ff2ba06a3303e24",
+      "hash": "810ad0fa7306c5dfe4644ae22930aa8d92d1458044c521bc3924e2bdf26683cb"
+    },
+    {
+      "id": "log-1794585589077-e107",
+      "timestamp": "2026-11-13T15:59:49.077Z",
+      "action": "REGLEMENT_CREDIT_CLIENT",
+      "actorName": "Aminata",
+      "actorRole": "caisse",
+      "details": {
+        "creditId": "crd-1794585571438",
+        "client": "M. Kaboré (Directeur Collège)",
+        "montantPaye": 5000,
+        "resteDu": 3000,
+        "mode": "orange_money"
+      },
+      "prevHash": "31158ceccb5e781677e45b404663bba78bceb6d0132b31351f28544245794181",
+      "hash": "cc0841fb2e0b8fbdc3c2bac44fd09ed33cd8bf92fd75cce53ff2ba06a3303e24"
+    },
+    {
+      "id": "log-1794585571443-7ed2",
+      "timestamp": "2026-11-13T15:59:31.438Z",
+      "action": "VENTE_CREDIT",
+      "actorName": "Aminata (Caissière)",
+      "actorRole": "vendeur",
+      "details": {
+        "saleId": "sale-1794585571438-39b0",
+        "client": "M. Kaboré (Directeur Collège)",
+        "phone": "+226 71 22 33 44",
+        "montant": 8000
+      },
+      "prevHash": "GENESIS_HASH_BURKINA_POS_2026",
+      "hash": "31158ceccb5e781677e45b404663bba78bceb6d0132b31351f28544245794181"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-1794587519723",
+      "name": "Maître Sawadogo Cabinet",
+      "phone": "+226 70 00 11 22",
+      "company": "Cabinet Juridique Sawadogo",
+      "address": "Ouagadougou",
+      "totalPurchases": 1000,
+      "currentDebt": 1000,
+      "createdAt": "2026-11-13"
+    },
+    {
+      "id": "cust-1",
+      "name": "M. Kaboré",
+      "phone": "+226 71 22 33 44",
+      "company": "Collège Privé Sainte-Famille",
+      "address": "Ouagadougou, Secteur 22",
+      "totalPurchases": 45000,
+      "currentDebt": 3000,
+      "createdAt": "2026-11-01"
+    },
+    {
+      "id": "cust-2",
+      "name": "M. Sawadogo",
+      "phone": "+226 70 12 34 56",
+      "company": "Complexe Scolaire Wend-Panga",
+      "address": "Ouagadougou, Secteur 28",
+      "totalPurchases": 82000,
+      "currentDebt": 13500,
+      "createdAt": "2026-11-02"
+    },
+    {
+      "id": "cust-3",
+      "name": "Me Traoré",
+      "phone": "+226 76 88 99 00",
+      "company": "Cabinet Juridique Traoré & Associés",
+      "address": "Avenue Bassawarga, Ouaga",
+      "totalPurchases": 25000,
+      "currentDebt": 0,
+      "createdAt": "2026-11-05"
+    },
+    {
+      "id": "cust-4",
+      "name": "Issa Ouédraogo",
+      "phone": "+226 78 55 44 33",
+      "company": "Étudiant Master Université Ki-Zerbo",
+      "address": "Zogona, Ouaga",
+      "totalPurchases": 12500,
+      "currentDebt": 0,
+      "createdAt": "2026-11-10"
+    }
+  ]
+}
