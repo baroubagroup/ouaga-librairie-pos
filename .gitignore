@@ -13,3 +13,9 @@ build/
 **/build/
 .flutter-plugins
 .flutter-plugins-dependencies
+*.apk
+**/*.apk
+*.lnk
+**/*.lnk
+package-lock.json
+**/package-lock.json

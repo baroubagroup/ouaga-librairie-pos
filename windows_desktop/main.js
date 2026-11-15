@@ -1,10 +1,8 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const path = require('path');
 const http = require('http');
-const { fork } = require('child_process');
 
 let mainWindow = null;
-let serverProcess = null;
 const PORT = 3500;
 const SERVER_URL = `http://localhost:${PORT}`;
 
@@ -15,7 +13,7 @@ function isServerRunning(callback) {
   req.on('error', () => {
     callback(false);
   });
-  req.setTimeout(1000, () => {
+  req.setTimeout(800, () => {
     req.abort();
     callback(false);
   });
@@ -27,25 +25,13 @@ function startEmbeddedServer(onReady) {
       console.log(`[Desktop] Serveur local déjà actif sur le port ${PORT}.`);
       onReady();
     } else {
-      console.log(`[Desktop] Démarrage du serveur embarqué server.js...`);
-      const serverPath = path.join(__dirname, 'server.js');
-      serverProcess = fork(serverPath, [], {
-        cwd: __dirname,
-        env: { ...process.env, PORT: PORT.toString() },
-        stdio: 'ignore'
-      });
-
-      // Attendre que le serveur réponde
-      let retries = 0;
-      const interval = setInterval(() => {
-        isServerRunning((alive) => {
-          if (alive || retries > 25) {
-            clearInterval(interval);
-            onReady();
-          }
-          retries++;
-        });
-      }, 200);
+      console.log(`[Desktop] Démarrage du serveur embarqué interne...`);
+      try {
+        require(path.join(__dirname, 'server.js'));
+      } catch (err) {
+        console.error('[Desktop] Erreur chargement server.js:', err);
+      }
+      setTimeout(onReady, 500);
     }
   });
 }
@@ -191,13 +177,5 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
-  }
-});
-
-app.on('before-quit', () => {
-  if (serverProcess) {
-    console.log('[Desktop] Arrêt du serveur embarqué...');
-    serverProcess.kill();
-    serverProcess = null;
   }
 });
